@@ -1,31 +1,25 @@
 # SD
 
-## Daily batch
+## Standard
 
-### Structure
-
-#### Project
-
-2 characters lowercased like __ne__.
+One project contains render information for 3 different styles:
 
 - __ginger__: Background with muse for https://pivoine.art
 - __bitter__: Background for YouTube and https://bitter.honeymachine.io
 - __joy__: Background with content https://bitter.honeymachine.io
 
-##### ginger
-
-- __top__: All swapped & upscaled images
-- __insta__: 4 random swapped images
-- __tiktok__: 4 random swapped images
-- __other__: All remaining images
-
-###### Requirements
+Each style must fulfill following requirements:
 
 1. One __styled__ batch
 2. Minimum 12 selected images
-3. Even number of selected images
 
-###### Command
+Also, each style will be structured to:
+
+- __instagram__: 4 random images
+- __tiktok__: 4 random images
+- __preview__: One selected image
+
+### ginger
 
 ```bash
 # ginger
@@ -33,36 +27,14 @@ giger/examples/styled/styled.py "demonic" -o giger/out/batch/demonic/ne/ginger -
 ```
 
 
-##### bitter
-
-- __techno__: One swapped & upscaled image
-
-###### Requirements
-
-1. One __styled__ batch
-2. Minimum 1 selected image
-
-###### Command
+### bitter
 
 ```bash
 # bitter
 giger/examples/styled/styled.py "demonic" -o giger/out/batch/demonic/ne/bitter -b ne1 -s $RANDOM -n giger/out/batch/_assets/prompts/negative.txt -d "(960, 560)" --scale 4 --size 10 --count 4 --steps 70 --lora 1.0 --prompt "A photorealistic panorama" --mod "A magnificent white night in beautiful Neon St. Petersburg in hot July with a blooming flora"
 ```
 
-##### joy
-
-###### Requirements
-
-1. One __styled__ batch
-2. Minimum 12 selected images
-3. Even number of selected images
-
-- __top__: All swapped & upscaled images
-- __insta__: 4 random swapped images
-- __tiktok__: 4 random swapped images
-- __other__: All remaining images
-
-###### Command
+### joy
 
 ```bash
 # joy
