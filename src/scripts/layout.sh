@@ -1,8 +1,6 @@
 #!/bin/bash
 
-STYLE=${STYLE:-"demonic"}
-PROJECT=${PROJECT:-"xx"}
-OUTPUT="sd/output/$STYLE/$PROJECT"
+OUTPUT="sd/output/$SD_STYLE/$SD_PROJECT"
 
 SIZE=4
 

@@ -1,13 +1,11 @@
 #!/bin/bash
 
-STYLE=${STYLE:-"demonic"}
-PROJECT=${PROJECT:-"xx"}
-OUTPUT="sd/output/$STYLE/$PROJECT"
+OUTPUT="sd/output/$SD_STYLE/$SD_PROJECT"
 
-META="$OUTPUT/meta.txt"
+SD_META="$OUTPUT/meta.txt"
 
-rm -rf "$META"
+mkdir -p $OUTPUT
 
-yake -ti "$SETTING" -t 1 >> $META
-yake -ti "$MUSE, $SETTING" -t 1 >> $META
-yake -ti "$OBJECT, $SETTING" -t 1 >> $META
+yake -ti "$SD_SETTING" -t 1 > "$SD_META"
+yake -ti "$SD_MUSE, $SD_SETTING" -t 1 >> "$SD_META"
+yake -ti "$SD_OBJECT, $SD_SETTING" -t 1 >> "$SD_META"

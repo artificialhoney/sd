@@ -2,18 +2,16 @@
 
 STYLED=giger/examples/styled/styled.py
 
-STYLE=${STYLE:-"demonic"}
-PROJECT=${PROJECT:-"xx"}
-OUTPUT="sd/output/$STYLE/$PROJECT"
+OUTPUT="sd/output/$SD_STYLE/$SD_PROJECT"
 
 FACE="sd/assets/faces/palina/dirne.png"
 
 DIMENSION="(960, 560)"
 
 # Initialize our own variables:
-SETTING=""
-MUSE=""
-OBJECT=""
+SETTING="$SD_SETTING"
+MUSE="$SD_MUSE"
+OBJECT="$SD_OBJECT"
 SIZE=10
 COUNT=4
 
@@ -79,18 +77,24 @@ do
     ((OPTIND++))
 done
 
+_MODS=($SD_MODS)
+for value in "${_MODS[@]}"
+do
+  MODS+=("--mod ${value}")
+done
+
 
 # Prepare
 rm -rf "$OUTPUT"
 
 # ginger
 TYPE="ginger"
-$STYLED "$STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$MUSE" --mod "$SETTING" -f "$FACE" --bypass_safety ${MODS[@]}
+$STYLED "$SD_STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$MUSE" --mod "$SETTING" -f "$FACE" --bypass_safety ${MODS[@]}
 
 # bitter
 TYPE="bitter"
-$STYLED "$STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$SETTING" --bypass_safety ${MODS[@]}
+$STYLED "$SD_STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$SETTING" --bypass_safety ${MODS[@]}
 
 # bitter
 TYPE="joy"
-$STYLED "$STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$OBJECT" --mod "$SETTING" --bypass_safety ${MODS[@]}
+$STYLED "$SD_STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$OBJECT" --mod "$SETTING" --bypass_safety ${MODS[@]}
