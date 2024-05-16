@@ -5,6 +5,7 @@ STYLED=giger/examples/styled/styled.py
 STYLE=${STYLE:-"demonic"}
 PROJECT=${PROJECT:-"xx"}
 OUTPUT="sd/output/$STYLE/$PROJECT"
+
 FACE="sd/assets/faces/palina/dirne.png"
 
 DIMENSION="(960, 560)"
@@ -93,6 +94,3 @@ $STYLED "$STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --
 # bitter
 TYPE="joy"
 $STYLED "$STYLE" -o "$OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$OBJECT" --mod "$SETTING" --bypass_safety ${MODS[@]}
-
-# Cleanup
-find $OUTPUT -type f -name '*.png' -print0 | xargs -0 -I{} -r -n1 -P10 cwebp -progress "{}" -o "{}.webp"
