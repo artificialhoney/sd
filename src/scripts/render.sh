@@ -4,8 +4,6 @@ STYLED=giger/examples/styled/styled.py
 
 FACE="$SD_ASSETS/faces/palina/dirne.png"
 
-DIMENSION="(960, 560)"
-
 # Initialize our own variables:
 SETTING="$SD_SETTING"
 MUSE="$SD_MUSE"
@@ -85,14 +83,19 @@ done
 # Prepare
 rm -rf "$SD_OUTPUT"
 
-# ginger
-TYPE="ginger"
-$STYLED "$SD_STYLE" -o "$SD_OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$MUSE" --mod "$SETTING" -f "$FACE" --bypass_safety ${MODS[@]}
+DIMENSION=${SD_RESOLUTION:-"(960, 560)"}
 
 # bitter
 TYPE="bitter"
+DIMENSION=${SD_RESOLUTION_BITTER:-"$DIMENSION"}
 $STYLED "$SD_STYLE" -o "$SD_OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$SETTING" --bypass_safety ${MODS[@]}
 
-# bitter
+# ginger
+TYPE="ginger"
+DIMENSION=${SD_RESOLUTION_GINGER:-"$DIMENSION"}
+$STYLED "$SD_STYLE" -o "$SD_OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$MUSE" --mod "$SETTING" -f "$FACE" --bypass_safety ${MODS[@]}
+
+# joy
 TYPE="joy"
+DIMENSION=${SD_RESOLUTION_JOY:-"$DIMENSION"}
 $STYLED "$SD_STYLE" -o "$SD_OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$OBJECT" --mod "$SETTING" --bypass_safety ${MODS[@]}

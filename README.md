@@ -21,22 +21,6 @@ Also, each style will be structured to:
 
 ### ginger
 
-```bash
-# ginger
-giger/examples/styled/styled.py "demonic" -o giger/out/batch/demonic/ne/ginger -b ne3 -s $RANDOM -n giger/out/batch/_assets/prompts/negative.txt -d "(960, 560)" --scale 4 --size 10 --count 4 --steps 70 --lora 1.0 --prompt "A photorealistic panorama" --mod "A magnificent white night in beautiful Neon St. Petersburg in hot July with a blooming flora" --mod "A fat big-breasted magnificent sexy romantic russian ginger-haired Ballerina" -f giger/out/batch/_assets/faces/palina/dirne.png --bypass_safety
-```
-
-
 ### bitter
 
-```bash
-# bitter
-giger/examples/styled/styled.py "demonic" -o giger/out/batch/demonic/ne/bitter -b ne1 -s $RANDOM -n giger/out/batch/_assets/prompts/negative.txt -d "(960, 560)" --scale 4 --size 10 --count 4 --steps 70 --lora 1.0 --prompt "A photorealistic panorama" --mod "A magnificent white night in beautiful Neon St. Petersburg in hot July with a blooming flora"
-```
-
 ### joy
-
-```bash
-# joy
-giger/examples/styled/styled.py "demonic" -o giger/out/batch/demonic/ne/joy -b ne9 -s $RANDOM -n giger/out/batch/_assets/prompts/negative.txt -d "(560, 960)" --scale 4 --size 10 --count 4 --steps 70 --lora 1.0 --prompt "A photorealistic panorama" --mod "A magnificent white night in beautiful Neon St. Petersburg in hot July with a blooming flora" --mod "Full body shot of a heavily armored and armed hyper-modern stealth warrior with Samurai-Mask and Katana-Sword in dark gray"
-```

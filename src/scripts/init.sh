@@ -9,3 +9,4 @@ set +a
 
 export SD_OUTPUT="$SD_SCRIPTS/../../output/$SD_STYLE/$SD_PROJECT"
 export SD_ASSETS="$SD_SCRIPTS/../../assets"
+export SD_DIMENSION="(960, 560)"
