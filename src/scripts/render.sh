@@ -81,7 +81,7 @@ done
 
 
 # Prepare
-rm -rf "$SD_OUTPUT"
+rm -rf "$SD_OUTPUT/*"
 
 DIMENSION=${SD_RESOLUTION:-"(960, 560)"}
 

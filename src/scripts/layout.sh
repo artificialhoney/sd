@@ -5,8 +5,8 @@ SIZE=4
 TYPES=('bitter' 'ginger' 'joy')
 
 for TYPE in "${TYPES[@]}"; do
-    rm -rf "$SD_OUTPUT/$TYPE/instagram"
-    rm -rf "$SD_OUTPUT/$TYPE/tiktok"
+    rm -rf "$SD_OUTPUT/$TYPE/instagram/*"
+    rm -rf "$SD_OUTPUT/$TYPE/tiktok/*"
     mkdir -p "$SD_OUTPUT/$TYPE/instagram"
     mkdir -p "$SD_OUTPUT/$TYPE/tiktok"
 
