@@ -4,6 +4,8 @@ SD_META="$SD_OUTPUT/meta.txt"
 
 mkdir -p $SD_OUTPUT
 
-yake -ti "$SD_SETTING" -t 1 > "$SD_META"
-yake -ti "$SD_MUSE, $SD_SETTING" -t 1 >> "$SD_META"
-yake -ti "$SD_OBJECT, $SD_SETTING" -t 1 >> "$SD_META"
+SD_TOP=4
+
+yake -ti "$SD_SETTING" -t $SD_TOP > "$SD_META"
+yake -ti "$SD_MUSE $SD_SETTING" -t $SD_TOP >> "$SD_META"
+yake -ti "$SD_OBJECT $SD_SETTING" -t $SD_TOP >> "$SD_META"
