@@ -1,32 +1,24 @@
 #!/bin/bash
 
-SIZE=4
+SIZE=5
 
 TYPES=('bitter' 'ginger' 'joy')
 
+SOCIALS=('instagram' 'tiktok')
+
 for TYPE in "${TYPES[@]}"; do
-    rm -rf "$SD_OUTPUT/$TYPE/instagram/*"
-    rm -rf "$SD_OUTPUT/$TYPE/tiktok/*"
-    mkdir -p "$SD_OUTPUT/$TYPE/instagram"
-    mkdir -p "$SD_OUTPUT/$TYPE/tiktok"
-
-    COUNT=0
-
     if [ "$TYPE" == "ginger" ]; then
-        BLOCK=8
+        GLOB="*.png.swapped.png.upscaled.png"
     else
-        BLOCK=4
+        GLOB="*.png.upscaled.png"
     fi
 
-    for f in $SD_OUTPUT/$TYPE/$TYPE-*; do
-        if [ $COUNT -lt $((SIZE * BLOCK)) ]; then
-            cp "$f" "$SD_OUTPUT/$TYPE/instagram"
-            COUNT=$((COUNT + 1))
-        elif [ $((COUNT)) -lt $((2 * SIZE * BLOCK)) ]; then
-            cp "$f" "$SD_OUTPUT/$TYPE/tiktok"
-            COUNT=$((COUNT + 1))
-        else
-            break
-        fi
+    for SOCIAL in "${SOCIALS[@]}"; do
+        rm -rf "$SD_OUTPUT/$TYPE/$SOCIAL/*"
+        mkdir -p "$SD_OUTPUT/$TYPE/$SOCIAL"
+
+        ls $SD_OUTPUT/$TYPE/$GLOB | sort -R | tail -$SIZE | while read f; do
+            cp $f $SD_OUTPUT/$TYPE/$SOCIAL
+        done
     done
 done
