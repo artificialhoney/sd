@@ -11,13 +11,13 @@ One project contains render information for 3 different styles:
 Each style must fulfill following requirements:
 
 1. One __styled__ batch
-2. Minimum 12 selected images
+2. Minimum __13__ selected images
 
 Also, each style will be structured to:
 
-- __instagram__: 4 random images
-- __tiktok__: 4 random images
-- __preview__: One selected image
+- __instagram__: __4__ random image copies
+- __tiktok__: __4__ random image copies
+- __preview__: __One__ selected image
 
 ### ginger
 

@@ -1,10 +1,8 @@
 #!/bin/bash
 
-OUTPUT="sd/output/$SD_STYLE/$SD_PROJECT"
+SD_META="$SD_OUTPUT/meta.txt"
 
-SD_META="$OUTPUT/meta.txt"
-
-mkdir -p $OUTPUT
+mkdir -p $SD_OUTPUT
 
 yake -ti "$SD_SETTING" -t 1 > "$SD_META"
 yake -ti "$SD_MUSE, $SD_SETTING" -t 1 >> "$SD_META"
