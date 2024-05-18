@@ -6,17 +6,38 @@ mkdir -p $SD_OUTPUT
 
 SD_TOP=4
 
+IFS=':' read -ra TYPES <<<"$SD_TYPES"
+
+OBJECT=${SD_OBJECT-""}
+PROMPT=${SD_PROMPT:-"modprompt_so"}
+SETTING=${SD_SETTING:-""}
+
+DEFS=""
+
+for TYPE in "${TYPES[@]}"; do
+    declare -n O="SD_OBJECT_${T}"
+    _OBJECT=${O:-"$OBJECT"}
+    declare -n P="SD_PROMPT_${T}"
+    _PROMPT=${P:-"$PROMPT"}
+    declare -n S="SD_SETTING_${T}"
+    _SETTING=${S:-"$SETTING"}
+
+    CONTEXT=$(bash $SD_SCRIPTS/prompts/$_PROMPT.sh "$_OBJECT" "$_SETTING")
+    CONTEXT=${CONTEXT//--mod/}
+    CONTEXT=${CONTEXT//--prompt/}
+    CONTEXT=$(echo $CONTEX | tr -d ' ') 
+
+    read -r -d '' VAR <<-EOM
+${TYPE}:
+    keywords: |
+$(yake -ti "$CONTEXT" -t "$SD_TOP" | tail -4 | sed 's/^/        /')
+EOM
+    DEFS="$DEFS\n$VAR"
+done
+
 cat >"$SD_META" <<-EOF
 ---
 project: $SD_PROJECT_NAME
 style: $SD_STYLE
-bitter:
-    keywords: |
-$(yake -ti "$SD_SETTING" -t "$SD_TOP" | tail -4 | sed 's/^/        /')
-ginger:
-    keywords: |
-$(yake -ti "$SD_MUSE $SD_SETTING" -t "$SD_TOP" | tail -4 | sed 's/^/        /')
-joy:
-    keywords: |
-$(yake -ti "$SD_OBJECT $SD_SETTING" -t "$SD_TOP" | tail -4 | sed 's/^/        /')
+${DEFS}
 EOF

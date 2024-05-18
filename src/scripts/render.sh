@@ -12,7 +12,7 @@ COUNT=4
 set -o errexit -o pipefail -o noclobber -o nounset
 
 # ignore errexit with `&& true`
-getopt --test > /dev/null && true
+getopt --test >/dev/null && true
 if [[ $? -ne 4 ]]; then
     echo 'I’m sorry, `getopt --test` failed in this environment.'
     exit 1
@@ -32,46 +32,44 @@ eval set -- "$PARSED"
 # now enjoy the options in order and nicely split until we see --
 while true; do
     case "$1" in
-        -x|--setting)
-            SETTING="$2"
-            shift 2
-            ;;
-        -m|--muse)
-            MUSE="$2"
-            shift 2
-            ;;
-        -o|--object)
-            OBJECT="$2"
-            shift 2
-            ;;
-        -s|--size)
-            SIZE="$2"
-            shift 2
-            ;;
-        -c|--count)
-            COUNT="$2"
-            shift 2
-            ;;
-        --)
-            shift
-            break
-            ;;
-        *)
-            echo "Programming error"
-            exit 3
-            ;;
+    -x | --setting)
+        SETTING="$2"
+        shift 2
+        ;;
+    -m | --muse)
+        MUSE="$2"
+        shift 2
+        ;;
+    -o | --object)
+        OBJECT="$2"
+        shift 2
+        ;;
+    -s | --size)
+        SIZE="$2"
+        shift 2
+        ;;
+    -c | --count)
+        COUNT="$2"
+        shift 2
+        ;;
+    --)
+        shift
+        break
+        ;;
+    *)
+        echo "Programming error"
+        exit 3
+        ;;
     esac
 done
 
-IFS=':' read -ra MODS <<< "$SD_MODS"
+IFS=':' read -ra MODS <<<"$SD_MODS"
 MODDING=""
-for MOD in "${MODS[@]}"
-do
+for MOD in "${MODS[@]}"; do
     MODDING="$MODDING --mod \"${MOD}\""
 done
 
-while [ $OPTIND -le "$#" ]
-do
+while [ $OPTIND -le "$#" ]; do
     MODDING="$MODDING --mod \"${!OPTIND}\""
     ((OPTIND++))
 done
@@ -79,33 +77,33 @@ done
 # Prepare
 rm -rf "$SD_OUTPUT/*"
 
-IFS=':' read -ra TYPES <<< "$SD_TYPES"
+IFS=':' read -ra TYPES <<<"$SD_TYPES"
 
 DIMENSION=${SD_RESOLUTION:-"(960, 560)"}
 OBJECT=${SD_OBJECT-""}
-PROMPT=${SD_PROMPT:-"modded"}
+PROMPT=${SD_PROMPT:-"modprompt_so"}
 SETTING=${SD_SETTING:-""}
-SWAP=${SD_SWAP:-1}
+SWAP=${SD_SWAP:- -1}
 
 for TYPE in "${TYPES[@]}"; do
     T=$(echo $TYPE | tr a-z A-Z)
 
     declare -n D="SD_RESOLUTION_${T}"
-    DIMENSION=${D:-$DIMENSION}
+    _DIMENSION=${D:-$DIMENSION}
     declare -n O="SD_OBJECT_${T}"
-    OBJECT=${O:-"$OBJECT"}
+    _OBJECT=${O:-"$OBJECT"}
     declare -n P="SD_PROMPT_${T}"
-    PROMPT=${P:-"$PROMPT"}
+    _PROMPT=${P:-"$PROMPT"}
     declare -n S="SD_SETTING_${T}"
-    SETTING=${S:-"$SETTING"}
+    _SETTING=${S:-"$SETTING"}
     declare -n SW="SD_SWAP_${T}"
-    SWAP=${SW:-$SWAP}
+    _SWAP=${SW:-$SWAP}
 
-    CONTEXT=$(bash $SD_SCRIPTS/prompts/$PROMPT.sh "$OBJECT" "$SETTING")
+    CONTEXT="$(bash $SD_SCRIPTS/prompts/$_PROMPT.sh "$_OBJECT" "$_SETTING")"
 
-    if [ $SWAP -lt 0 ]; then
+    if [ $_SWAP -gt 0 ]; then
         CONTEXT="$CONTEXT -f $FACE"
     fi
 
-    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
+    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
 done
