@@ -1,13 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 STYLED=giger/examples/styled/styled.py
 
 FACE="$SD_ASSETS/faces/palina/dirne.png"
 
 # Initialize our own variables:
-SETTING="$SD_SETTING"
-MUSE="$SD_MUSE"
-OBJECT="$SD_OBJECT"
 SIZE=10
 COUNT=4
 
@@ -48,11 +45,11 @@ while true; do
             shift 2
             ;;
         -s|--size)
-            SIZE=$2
+            SIZE="$2"
             shift 2
             ;;
         -c|--count)
-            COUNT=$2
+            COUNT="$2"
             shift 2
             ;;
         --)
@@ -66,36 +63,49 @@ while true; do
     esac
 done
 
-MODS=()
+IFS=':' read -ra MODS <<< "$SD_MODS"
+MODDING=""
+for MOD in "${MODS[@]}"
+do
+    MODDING="$MODDING --mod \"${MOD}\""
+done
+
 while [ $OPTIND -le "$#" ]
 do
-    MODS+=("--mod ${!OPTIND}")
+    MODDING="$MODDING --mod \"${!OPTIND}\""
     ((OPTIND++))
 done
-
-_MODS=($SD_MODS)
-for value in "${_MODS[@]}"
-do
-  MODS+=("--mod ${value}")
-done
-
 
 # Prepare
 rm -rf "$SD_OUTPUT/*"
 
+IFS=':' read -ra TYPES <<< "$SD_TYPES"
+
 DIMENSION=${SD_RESOLUTION:-"(960, 560)"}
+OBJECT=${SD_OBJECT-""}
+PROMPT=${SD_PROMPT:-"modded"}
+SETTING=${SD_SETTING:-""}
+SWAP=${SD_SWAP:-1}
 
-# bitter
-TYPE="bitter"
-DIMENSION=${SD_RESOLUTION_BITTER:-"$DIMENSION"}
-$STYLED "$SD_STYLE" -o "$SD_OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$SETTING" --bypass_safety ${MODS[@]}
+for TYPE in "${TYPES[@]}"; do
+    T=$(echo $TYPE | tr a-z A-Z)
 
-# ginger
-TYPE="ginger"
-DIMENSION=${SD_RESOLUTION_GINGER:-"$DIMENSION"}
-$STYLED "$SD_STYLE" -o "$SD_OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$MUSE" --mod "$SETTING" -f "$FACE" --bypass_safety ${MODS[@]}
+    declare -n D="SD_RESOLUTION_${T}"
+    DIMENSION=${D:-$DIMENSION}
+    declare -n O="SD_OBJECT_${T}"
+    OBJECT=${O:-"$OBJECT"}
+    declare -n P="SD_PROMPT_${T}"
+    PROMPT=${P:-"$PROMPT"}
+    declare -n S="SD_SETTING_${T}"
+    SETTING=${S:-"$SETTING"}
+    declare -n SW="SD_SWAP_${T}"
+    SWAP=${SW:-$SWAP}
 
-# joy
-TYPE="joy"
-DIMENSION=${SD_RESOLUTION_JOY:-"$DIMENSION"}
-$STYLED "$SD_STYLE" -o "$SD_OUTPUT" -b "$TYPE" -s $RANDOM -d "$DIMENSION" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --prompt "$OBJECT" --mod "$SETTING" --bypass_safety ${MODS[@]}
+    CONTEXT=$(bash $SD_SCRIPTS/prompts/$PROMPT.sh "$OBJECT" "$SETTING")
+
+    if [ $SWAP -lt 0 ]; then
+        CONTEXT="$CONTEXT -f $FACE"
+    fi
+
+    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
+done

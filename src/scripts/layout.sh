@@ -1,23 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-SIZE=5
+SIZE=${SD_SOCIALS_IMAGESCOUNT:-3}
 
-TYPES=('bitter' 'ginger' 'joy')
-
-SOCIALS=('instagram' 'tiktok')
+IFS=':' read -ra TYPES <<< "$SD_TYPES"
+IFS=':' read -ra SOCIALS <<< "$SD_SOCIALS"
+SWAP=${SD_SWAP:-1}
 
 for TYPE in "${TYPES[@]}"; do
-    if [ "$TYPE" == "ginger" ]; then
-        GLOB="*.png.swapped.png.upscaled.png"
-    else
-        GLOB="*.png.upscaled.png"
-    fi
+    T=$(echo $TYPE | tr a-z A-Z)    
+    declare -n SW="SD_SWAP_$T"
+    SWAP=${SW:-$SWAP}
 
-    for SOCIAL in "${SOCIALS[@]}"; do
+    for SOCIAL in ${SOCIALS[@]}; do
         rm -rf "$SD_OUTPUT/$TYPE/$SOCIAL/*"
         mkdir -p "$SD_OUTPUT/$TYPE/$SOCIAL"
 
-        ls $SD_OUTPUT/$TYPE/$GLOB | sort -R | tail -$SIZE | while read f; do
+        ls $SD_OUTPUT/$TYPE/$GLOB | sort -R | tail -$((SIZE + 1)) | while read f; do
             cp $f $SD_OUTPUT/$TYPE/$SOCIAL
         done
     done

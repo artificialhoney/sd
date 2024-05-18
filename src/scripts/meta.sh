@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SD_META="$SD_OUTPUT/meta.yml"
 
