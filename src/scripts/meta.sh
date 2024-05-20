@@ -15,6 +15,7 @@ SETTING=${SD_SETTING:-""}
 DEFS=""
 
 for TYPE in "${TYPES[@]}"; do
+    T=$(echo $TYPE | tr a-z A-Z)
     declare -n O="SD_OBJECT_${T}"
     _OBJECT=${O:-"$OBJECT"}
     declare -n P="SD_PROMPT_${T}"
@@ -25,19 +26,20 @@ for TYPE in "${TYPES[@]}"; do
     CONTEXT=$(bash $SD_SCRIPTS/prompts/$_PROMPT.sh "$_OBJECT" "$_SETTING")
     CONTEXT=${CONTEXT//--mod/}
     CONTEXT=${CONTEXT//--prompt/}
-    CONTEXT=$(echo $CONTEX | tr -d ' ') 
+    # CONTEXT=$(echo "$CONTEXT" | tr -d ' ') 
 
-    read -r -d '' VAR <<-EOM
+    read -r -d '' D <<-EOM
+${DEFS}
 ${TYPE}:
     keywords: |
 $(yake -ti "$CONTEXT" -t "$SD_TOP" | tail -4 | sed 's/^/        /')
 EOM
-    DEFS="$DEFS\n$VAR"
+DEFS="${D}"
 done
 
 cat >"$SD_META" <<-EOF
 ---
 project: $SD_PROJECT_NAME
 style: $SD_STYLE
-${DEFS}
+$DEFS
 EOF

@@ -63,17 +63,6 @@ while true; do
     esac
 done
 
-IFS=':' read -ra MODS <<<"$SD_MODS"
-MODDING=""
-for MOD in "${MODS[@]}"; do
-    MODDING="$MODDING --mod \"${MOD}\""
-done
-
-while [ $OPTIND -le "$#" ]; do
-    MODDING="$MODDING --mod \"${!OPTIND}\""
-    ((OPTIND++))
-done
-
 # Prepare
 rm -rf "$SD_OUTPUT/*"
 
@@ -84,9 +73,24 @@ OBJECT=${SD_OBJECT-""}
 PROMPT=${SD_PROMPT:-"modprompt_so"}
 SETTING=${SD_SETTING:-""}
 SWAP=${SD_SWAP:- -1}
+MODS=${SD_MODS:-""}
+
+GLOBALMODS=""
+while [ $OPTIND -le "$#" ]; do
+    GLOBALMODS="$GLOBALMODS --mod \"${!OPTIND}\""
+    ((OPTIND++))
+done
 
 for TYPE in "${TYPES[@]}"; do
     T=$(echo $TYPE | tr a-z A-Z)
+
+    declare -n M="SD_MODS_${T}"
+    _MODS=${M:-$MODS}
+    IFS=':' read -ra MODS <<<"$_MODS"
+    MODDING="$GLOBALMODS"
+    for MOD in "${MODS[@]}"; do
+        MODDING="$MODDING --mod \"${MOD}\""
+    done
 
     declare -n D="SD_RESOLUTION_${T}"
     _DIMENSION=${D:-$DIMENSION}

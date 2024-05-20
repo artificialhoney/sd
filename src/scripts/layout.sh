@@ -1,21 +1,38 @@
 #!/usr/bin/env bash
 
-SIZE=${SD_SOCIALS_IMAGESCOUNT:-3}
-
 IFS=':' read -ra TYPES <<< "$SD_TYPES"
-IFS=':' read -ra SOCIALS <<< "$SD_SOCIALS"
-SWAP=${SD_SWAP:-1}
+
+GLOBALSOCIALS=${SD_SOCIALS:-""}
+SWAP=${SD_SWAP:- -1}
+COUNT=${SD_SOCIALSCOUNT:-3}
 
 for TYPE in "${TYPES[@]}"; do
     T=$(echo $TYPE | tr a-z A-Z)    
     declare -n SW="SD_SWAP_$T"
-    SWAP=${SW:-$SWAP}
+    _SWAP=${SW:-$SWAP}
+
+    if [ $_SWAP -gt 0 ]; then
+        GLOB="*.swapped.png.upscaled.png"
+    else
+        GLOB="*.upscaled.png"
+    fi
+
+    declare -n SW="SD_SWAP_$T"
+    _SWAP=${SW:-$SWAP}
+
+    declare -n C="SD_SOCIALSCOUNT_${T}"
+    _COUNT=${C:-$COUNT}
+
+    declare -n S="SD_SOCIALS_${T}"
+    _SOCIALS=${S:-$GLOBALSOCIALS}
+
+    IFS=':' read -ra SOCIALS <<<"$_SOCIALS"
 
     for SOCIAL in ${SOCIALS[@]}; do
         rm -rf "$SD_OUTPUT/$TYPE/$SOCIAL/*"
         mkdir -p "$SD_OUTPUT/$TYPE/$SOCIAL"
 
-        ls $SD_OUTPUT/$TYPE/$GLOB | sort -R | tail -$((SIZE + 1)) | while read f; do
+        ls $SD_OUTPUT/$TYPE/$GLOB | sort -R | tail -$((_COUNT + 1)) | while read f; do
             cp $f $SD_OUTPUT/$TYPE/$SOCIAL
         done
     done
