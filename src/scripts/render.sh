@@ -64,9 +64,9 @@ while [ $OPTIND -le "$#" ]; do
     ((OPTIND++))
 done
 
-IFS=':' read -ra TYPES <<<"$SD_TYPES"
+IFS=':' read -ra _TYPES <<<"$TYPES"
 
-for TYPE in "${TYPES[@]}"; do
+for TYPE in "${_TYPES[@]}"; do
     T=$(echo $TYPE | tr a-z A-Z)
 
     declare -n M="SD_MODS_${T}"
