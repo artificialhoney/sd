@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-STYLED=giger/examples/styled/styled.py
-
-FACE="$SD_ASSETS/faces/palina/dirne.png"
-
-# Initialize our own variables:
-SIZE=10
-COUNT=4
-
 # More safety, by turning some bugs into errors.
 set -o errexit -o pipefail -o noclobber -o nounset
 
@@ -66,29 +58,22 @@ done
 # Prepare
 rm -rf "$SD_OUTPUT/*"
 
-IFS=':' read -ra TYPES <<<"$SD_TYPES"
-
-DIMENSION=${SD_RESOLUTION:-"(960, 560)"}
-OBJECT=${SD_OBJECT-""}
-PROMPT=${SD_PROMPT:-"modprompt_so"}
-SETTING=${SD_SETTING:-""}
-SWAP=${SD_SWAP:- -1}
-MODS=${SD_MODS:-""}
-
 GLOBALMODS=""
 while [ $OPTIND -le "$#" ]; do
     GLOBALMODS="$GLOBALMODS --mod \"${!OPTIND}\""
     ((OPTIND++))
 done
 
+IFS=':' read -ra TYPES <<<"$SD_TYPES"
+
 for TYPE in "${TYPES[@]}"; do
     T=$(echo $TYPE | tr a-z A-Z)
 
     declare -n M="SD_MODS_${T}"
     _MODS=${M:-$MODS}
-    IFS=':' read -ra MODS <<<"$_MODS"
+    IFS=':' read -ra __MODS <<<"$_MODS"
     MODDING="$GLOBALMODS"
-    for MOD in "${MODS[@]}"; do
+    for MOD in "${__MODS[@]}"; do
         MODDING="$MODDING --mod \"${MOD}\""
     done
 

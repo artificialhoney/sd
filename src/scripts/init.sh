@@ -9,4 +9,16 @@ set +a
 
 export SD_OUTPUT="$SD_SCRIPTS/../../output/$SD_STYLE/$SD_PROJECT"
 export SD_ASSETS="$SD_SCRIPTS/../../assets"
-export SD_DIMENSION="(960, 560)"
+export $SD_TYPES
+
+export STYLED=${SD_STYLED:-giger/examples/styled/styled.py}
+export FACE=${SD_FACE:-"$SD_ASSETS/faces/palina/dirne.png"}
+export SIZE=${SD_SIZE:-10}
+export COUNT=${SD_COUNT:-4}
+export DIMENSION=${SD_DIMENSION:-"(960, 560)"}
+export OBJECT=${SD_OBJECT-""}
+export PROMPT=${SD_PROMPT:-"prompt_so"}
+export SETTING=${SD_SETTING:-""}
+export SWAP=${SD_SWAP:- -1}
+export MODS=${SD_MODS:-""}
+

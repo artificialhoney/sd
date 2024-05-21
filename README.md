@@ -2,6 +2,11 @@
 
 ## Standard
 
+### Batch
+
+1. Size: 5
+2. Count: 4
+
 ### Structure
 
 One project contains render information for 3 different styles:
@@ -26,8 +31,8 @@ Also, each style will be structured to:
 Run steps in order:
 
 1. __render.sh__ (~45min / V100)
-2. __convert.sh__ (~2min / V100)
-3. Delete all corrupted and artifacted images
+2. Delete all corrupted and artifacted images
+3. __convert.sh__ (~2min / V100)
 4. Move one __preview__ image set in the according folder
 5. __layout.sh__ (~0.5min / V100)
 6. __meta.sh__ (~0.25min / V100)
