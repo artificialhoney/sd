@@ -77,7 +77,7 @@ for TYPE in "${_TYPES[@]}"; do
         MODDING="$MODDING --mod \"${MOD}\""
     done
 
-    declare -n D="SD_RESOLUTION_${T}"
+    declare -n D="SD_DIMENSION_${T}"
     _DIMENSION=${D:-$DIMENSION}
     declare -n O="SD_OBJECT_${T}"
     _OBJECT=${O:-"$OBJECT"}
