@@ -29,12 +29,10 @@ for TYPE in "${_TYPES[@]}"; do
     declare -n SW="SD_SWAP_${T}"
     _SWAP=${SW:-$SWAP}
 
-    CONTEXT=$(bash $SD_SCRIPTS/prompts/$_PROMPT.sh "$_OBJECT" "$_SETTING")
-    CONTEXT=${CONTEXT//--mod/}
-    CONTEXT=${CONTEXT//--prompt/}
-
     declare -n M="SD_MODS_${T}"
     _MODS=${M:-$MODS}
+
+    IMAGES=("$SD_OUTPUT"/$TYPE/*.png)
 
     read -r -d '' D <<-EOM
 ${DEFS}
@@ -44,9 +42,8 @@ ${TYPE}:
     swap: $_SWAP
     dimension: $_DIMENSION
     mods: ${_MODS[*]}
-    prompt: $_PROMPT
-    keywords: |
-$(yake -ti "$CONTEXT" -t "$SD_TOP" | tail -4 | sed 's/^/        /')
+    prompt: "$_PROMPT"
+    styled: $(exiftool -ImageDescription "${IMAGES[0]}" | sed 's/^Image Description               : //')
 EOM
 DEFS="${D}"
 done
