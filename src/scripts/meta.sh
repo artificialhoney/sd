@@ -42,7 +42,7 @@ ${TYPE}:
     swap: $_SWAP
     dimension: $_DIMENSION
     mods: ${_MODS[*]}
-    prompt: "$_PROMPT"
+    prompt: $_PROMPT
     styled: $(exiftool -ImageDescription "${IMAGES[0]}" | sed 's/^Image Description               : //')
 EOM
 DEFS="${D}"
