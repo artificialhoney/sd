@@ -12,7 +12,6 @@ export SD_ASSETS="$SD_SCRIPTS/../../assets"
 
 export STYLED=${SD_STYLED:-giger/examples/styled/styled.py}
 export FACE=${SD_FACE:-"$SD_ASSETS/faces/palina/dirne.png"}
-export FACE_SIZE=${SD_FACE_SIZE:-640}
 export SIZE=${SD_SIZE:-10}
 export COUNT=${SD_COUNT:-4}
 export DIMENSION=${SD_DIMENSION:-"(960, 560)"}

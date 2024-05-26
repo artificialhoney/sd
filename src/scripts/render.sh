@@ -94,5 +94,5 @@ for TYPE in "${_TYPES[@]}"; do
         CONTEXT="$CONTEXT -f $FACE"
     fi
 
-    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 -dw $FACE_SIZE -dh $FACE_SIZE --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
+    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 -ef --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
 done
