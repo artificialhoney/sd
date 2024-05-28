@@ -19,6 +19,7 @@ export OBJECT=${SD_OBJECT-""}
 export PROMPT=${SD_PROMPT:-"prompt_os"}
 export SETTING=${SD_SETTING:-""}
 export SWAP=${SD_SWAP:- -1}
+export ENHANCE_FACE=${SD_ENHANCE_FACE:- -1}
 export MODS=${SD_MODS:-""}
 export TYPES="$SD_TYPES"
 

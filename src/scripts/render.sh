@@ -87,6 +87,8 @@ for TYPE in "${_TYPES[@]}"; do
     _SETTING=${S:-"$SETTING"}
     declare -n SW="SD_SWAP_${T}"
     _SWAP=${SW:-$SWAP}
+    declare -n EF="SD_ENHANCE_FACE_${T}"
+    _ENHANCE_FACE=${EF:-$ENHANCE_FACE}
 
     CONTEXT="$(bash $SD_SCRIPTS/prompts/$_PROMPT.sh "$_OBJECT" "$_SETTING")"
 
@@ -94,5 +96,9 @@ for TYPE in "${_TYPES[@]}"; do
         CONTEXT="$CONTEXT -f $FACE"
     fi
 
-    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 -ef --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
+    if [ $_ENHANCE_FACE -gt 0 ]; then
+        CONTEXT="$CONTEXT -ef"
+    fi
+
+    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
 done
