@@ -7,7 +7,7 @@ set -a
 export SD_PROJECT_NAME="$SD_PROJECT"
 set +a
 
-export SD_OUTPUT="$SD_SCRIPTS/../../output/$SD_STYLE/$SD_PROJECT"
+export SD_OUTPUT="$SD_SCRIPTS/../../output/$SD_PROJECT"
 export SD_ASSETS="$SD_SCRIPTS/../../assets"
 
 export STYLED=${SD_STYLED:-giger/examples/styled/styled.py}
