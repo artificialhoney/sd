@@ -17,6 +17,8 @@ done
 IFS=':' read -ra _TYPES <<<"$TYPES"
 
 for TYPE in "${_TYPES[@]}"; do
+    declare -n M="SD_MODEL_${T}"
+    _MODEL=${M:-$MODEL}
     T=$(echo $TYPE | tr a-z A-Z)
     declare -n D="SD_DIMENSION_${T}"
     _DIMENSION=${D:-$DIMENSION}
@@ -37,6 +39,7 @@ for TYPE in "${_TYPES[@]}"; do
     read -r -d '' D <<-EOM
 ${DEFS}
 ${TYPE}:
+    model: $_MODEL
     object: $_OBJECT
     setting: $_SETTING
     swap: $_SWAP

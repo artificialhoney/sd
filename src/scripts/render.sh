@@ -77,6 +77,8 @@ for TYPE in "${_TYPES[@]}"; do
         MODDING="$MODDING --mod \"${MOD}\""
     done
 
+    declare -n M="SD_MODEL_${T}"
+    _MODEL=${M:-$MODEL}
     declare -n D="SD_DIMENSION_${T}"
     _DIMENSION=${D:-$DIMENSION}
     declare -n O="SD_OBJECT_${T}"
@@ -100,5 +102,5 @@ for TYPE in "${_TYPES[@]}"; do
         CONTEXT="$CONTEXT -ef"
     fi
 
-    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
+    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 -m "$_MODEL" --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
 done

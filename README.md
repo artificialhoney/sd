@@ -40,3 +40,15 @@ Run steps in order:
 ```bash
 SD_PROJECT=<PROJECT> source sd/src/scripts/init.sh && bash sd/src/scripts/<COMMAND>.sh
 ```
+
+# Appendix
+
+## Models
+
+- [digiplay/majicMIX_realistic_v7](https://huggingface.co/digiplay/majicMIX_realistic_v7)
+- [Lykon/DreamShaper](https://huggingface.co/Lykon/DreamShaper)
+- [gsdf/Counterfeit-V3.0](https://huggingface.co/gsdf/Counterfeit-V3.0)
+- [SG161222/Realistic_Vision_V6.0_B1_noVAE](https://huggingface.co/SG161222/Realistic_Vision_V6.0_B1_noVAE)
+- [Meina/MeinaMix_V11](https://huggingface.co/Meina/MeinaMix_V11)
+- [stablediffusionapi/rev-animated](https://huggingface.co/stablediffusionapi/rev-animated)
+- [stablediffusionapi/cetusmix](https://huggingface.co/stablediffusionapi/cetusmix)
