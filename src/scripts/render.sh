@@ -70,7 +70,14 @@ for TYPE in "${_TYPES[@]}"; do
     T=$(echo $TYPE | tr a-z A-Z)
 
     declare -n M="SD_MODS_${T}"
+    declare -n CM="SD_CONCAT_MODS_${T}"
+    _CONCAT_MODS=${CM:-$CONCAT_MODS}
     _MODS=${M:-$MODS}
+
+    if [[ $_CONCAT_MODS -gt 0 && "$_MODS" != "$MODS" ]]; then
+        _MODS="$M:$MODS"
+    fi
+
     IFS=':' read -ra __MODS <<<"$_MODS"
     MODDING="$GLOBALMODS"
     for MOD in "${__MODS[@]}"; do
@@ -91,6 +98,8 @@ for TYPE in "${_TYPES[@]}"; do
     _SWAP=${SW:-$SWAP}
     declare -n EF="SD_ENHANCE_FACE_${T}"
     _ENHANCE_FACE=${EF:-$ENHANCE_FACE}
+    declare -n SE="SD_SEED_${T}"
+    _SEED=${SE:-$SEED}
 
     CONTEXT="$(bash $SD_SCRIPTS/prompts/$_PROMPT.sh "$_OBJECT" "$_SETTING")"
 
@@ -102,5 +111,9 @@ for TYPE in "${_TYPES[@]}"; do
         CONTEXT="$CONTEXT -ef"
     fi
 
-    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$RANDOM" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 -m "$_MODEL" --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
+    if [ $_SEED -lt 0 ]; then
+       _SEED=$RANDOM
+    fi
+
+    eval $STYLED -o "$SD_OUTPUT" -b "$TYPE" -s "$_SEED" -d "'$_DIMENSION'" --scale 4 --size $SIZE --count $COUNT --steps 70 --lora 1.0 -m "$_MODEL" --bypass_safety $MODDING $CONTEXT "$SD_STYLE"
 done

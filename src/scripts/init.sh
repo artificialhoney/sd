@@ -22,5 +22,9 @@ export MODEL=${SD_MODEL:-"Lykon/DreamShaper"}
 export SWAP=${SD_SWAP:- -1}
 export ENHANCE_FACE=${SD_ENHANCE_FACE:- -1}
 export MODS=${SD_MODS:-""}
+export CONCAT_MODS=${SD_CONCAT_MODS:- -1}
 export TYPES="$SD_TYPES"
+export SEED=${SD_SEED:- -1}
+
+export SSH_HOST=${SD_SSH_HOST:-""}
 
