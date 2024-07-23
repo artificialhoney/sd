@@ -10,8 +10,11 @@
     batch_size: 10
     batch_count: 4
     inference_steps: 70
-    face: assets/faces/palina/dirne.png
+    face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
     scale: 4
+    output: "{{ playbook_dir }}/output"
+    giger: /usr/local/bin/giger
+    batch_name: TODO
   tasks:
     - name: Init
       tags:
@@ -27,43 +30,45 @@
       loop: "{{ prompts | dict2items }}"
       ansible.builtin.command:
         argv:
-          - giger image
-          - -m {{ model }}
-          - -o output/{{ project }}/{{ item.key }}
-          - -p {{ item.value.content }}
-          - -n {{ negative_prompt }}
-          - --width {{ width }}
-          - --height {{ height }}
-          - --batch_size {{ batch_size }}
-          - --batch_count {{ batch_count }}
-          - --inference_steps {{ inference_steps }}
-          - --name {{ item.key }}
+          - "{{ giger }}"
+          - image
+          - -m={{ model }}
+          - -o={{ output }}/{{ project }}/{{ item.key }}
+          - -p="{{ item.value.content }}"
+          - -n="{{ negative_prompt }}"
+          - --width={{ width | int }}
+          - --height={{ height | int }}
+          - --batch_size={{ batch_size | int }}
+          - --batch_count={{ batch_count | int }}
+          - --inference_steps={{ inference_steps | int }}
+          - --name={{ item.key }}
           - --bypass_safety
       register: output
       changed_when: output.rc != 0
     - name: Roop
       tags:
         - roop
-      loop: "{{ fileglob('output/' + project + '/*/_selected/*.png') }}"
+      loop: "{{ lookup('ansible.builtin.fileglob', '/'.join(('output', project,  batch_name, '_selected', '*.png')), wantlist=True) }}"
       ansible.builtin.command:
         argv:
-          - giger roop
-          - -f {{ face }}
-          - -i {{ item.value }}
-          - -o {{ item.value }}.swapped.png
-          - -t {{ (item.value | basename | split("."))[1] }}
+          - "{{ giger }}"
+          - roop
+          - -f={{ face }}
+          - -i={{ item }}
+          - -o={{ item }}.swapped.png
+          - -t={{ (item | basename | split("."))[1] }}
       register: output
       changed_when: output.rc != 0
     - name: Upscale
       tags:
         - upscale
-      loop: "{{ fileglob('output/' + project + '/*/_selected/*.png') }}"
+      loop: "{{ lookup('ansible.builtin.fileglob', '/'.join(('output', project, batch_name, '_selected', '*.png')), wantlist=True) }}"
       ansible.builtin.command:
         argv:
-          - giger upscale
-          - -i {{ item.value }}
-          - -o {{ item.value }}.upscaled.png
-          - -s {{ scale }}
+          - "{{ giger }}"
+          - upscale
+          - -i={{ item }}
+          - -o={{ item }}.upscaled.png
+          - -s={{ scale | int }}
       register: output
       changed_when: output.rc != 0
-      
