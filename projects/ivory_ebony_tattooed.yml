@@ -1,0 +1,10 @@
+---
+# model: Meina/MeinaMix_V11
+width: 960
+height: 560
+phrases:
+  context: A scene of an adult interracial erotic movie, two beautiful sexy lesbians, one with pale skin and red hair, the second with black skin and black hair. big breasts, tattoos, sexy latex body and latex stockings and boots, buzz hair-cut
+  mods: lesbo, erotic, sexy, aesthetic
+prompts:
+  suite:
+    content: '{{ phrases.context }}, amusing in a hotel suite, {{ phrases.mods }}'

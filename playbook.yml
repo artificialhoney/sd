@@ -1,0 +1,69 @@
+- name: SD
+  hosts: all
+  vars:
+    model: Lykon/DreamShaper
+    project: TODO
+    negative_prompt: |
+      The artwork avoids the pitfalls of bad art, such as ugly and deformed eyes and faces, poorly drawn, blurry, and disfigured bodies with extra limbs and close-ups that look weird. It also avoids other common issues such as watermarking, text errors, missing fingers or digits, cropping, poor quality, and JPEG artifacts. The artwork is free of signature or watermark and avoids framing issues. The hands are not deformed, the eyes are not disfigured, and there are no extra bodies or limbs. The artwork is not blurry, out of focus, or poorly drawn, and the proportions are not bad or deformed. There are no mutations, missing limbs, or floating or disconnected limbs. The hands and neck are not malformed, and there are no extra heads or out-of-frame elements. The artwork is not low-res or disgusting and is a well-drawn, highly detailed, and beautiful rendering. EasyNegative
+    width: 960
+    height: 560
+    batch_size: 10
+    batch_count: 4
+    inference_steps: 70
+    face: assets/faces/palina/dirne.png
+    scale: 4
+  tasks:
+    - name: Init
+      tags:
+        - txt2img
+        - upscale
+        - roop
+      ansible.builtin.include_vars:
+        dir: projects
+        files_matching: "{{ project }}.yml"
+    - name: Txt2img
+      tags:
+        - txt2img
+      loop: "{{ prompts | dict2items }}"
+      ansible.builtin.command:
+        argv:
+          - giger image
+          - -m {{ model }}
+          - -o output/{{ project }}/{{ item.key }}
+          - -p {{ item.value.content }}
+          - -n {{ negative_prompt }}
+          - --width {{ width }}
+          - --height {{ height }}
+          - --batch_size {{ batch_size }}
+          - --batch_count {{ batch_count }}
+          - --inference_steps {{ inference_steps }}
+          - --name {{ item.key }}
+          - --bypass_safety
+      register: output
+      changed_when: output.rc != 0
+    - name: Roop
+      tags:
+        - roop
+      loop: "{{ fileglob('output/' + project + '/*/_selected/*.png') }}"
+      ansible.builtin.command:
+        argv:
+          - giger roop
+          - -f {{ face }}
+          - -i {{ item.value }}
+          - -o {{ item.value }}.swapped.png
+          - -t {{ (item.value | basename | split("."))[1] }}
+      register: output
+      changed_when: output.rc != 0
+    - name: Upscale
+      tags:
+        - upscale
+      loop: "{{ fileglob('output/' + project + '/*/_selected/*.png') }}"
+      ansible.builtin.command:
+        argv:
+          - giger upscale
+          - -i {{ item.value }}
+          - -o {{ item.value }}.upscaled.png
+          - -s {{ scale }}
+      register: output
+      changed_when: output.rc != 0
+      
