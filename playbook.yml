@@ -32,10 +32,10 @@
         argv:
           - "{{ giger }}"
           - image
-          - -m={{ model }}
-          - -o={{ output }}/{{ project }}/{{ item.key }}
-          - -p="{{ item.value.content }}"
-          - -n="{{ negative_prompt }}"
+          - -o={{ output }}/{{ project }}
+          - -p={{ item.value.content }}
+          - -n={{ negative_prompt }}
+          - --model={{ model }}
           - --width={{ width | int }}
           - --height={{ height | int }}
           - --batch_size={{ batch_size | int }}
