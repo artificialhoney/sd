@@ -27,14 +27,14 @@
     - name: Txt2img
       tags:
         - txt2img
-      loop: "{{ prompts | dict2items }}"
+      loop: "{{ prompts | dict2items | flatten(levels=1) }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
           - image
           - -o={{ output }}/{{ project }}
-          - -p={{ item.value.content }}
-          - -n={{ negative_prompt }}
+          - -p="{{ item.value.content }}"
+          - -n="{{ negative_prompt }}"
           - --model={{ model }}
           - --width={{ width | int }}
           - --height={{ height | int }}
@@ -43,8 +43,8 @@
           - --inference_steps={{ inference_steps | int }}
           - --name={{ item.key }}
           - --bypass_safety
-      register: output
-      changed_when: output.rc != 0
+      register: _output
+      changed_when: _output.rc != 0
     - name: Roop
       tags:
         - roop
@@ -57,12 +57,12 @@
           - -i={{ item }}
           - -o={{ item }}.swapped.png
           - -t={{ (item | basename | split("."))[1] }}
-      register: output
-      changed_when: output.rc != 0
+      register: _output
+      changed_when: _output.rc != 0
     - name: Upscale
       tags:
         - upscale
-      loop: "{{ lookup('ansible.builtin.fileglob', '/'.join(('output', project, batch_name, '_selected', '*.png')), wantlist=True) }}"
+      loop: "{{ lookup('ansible.builtin.fileglob', '/'.join((output, project, batch_name, '_selected', '*.png')), wantlist=True) }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
@@ -70,5 +70,5 @@
           - -i={{ item }}
           - -o={{ item }}.upscaled.png
           - -s={{ scale | int }}
-      register: output
-      changed_when: output.rc != 0
+      register: _output
+      changed_when: _output.rc != 0

@@ -1,5 +1,5 @@
 ---
-model: SG161222/Realistic_Vision_V6.0_B1_noVAE
+model: digiplay/majicMIX_realistic_v7
 width: 960
 height: 560
 phrases:
@@ -7,16 +7,16 @@ phrases:
   mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights
 prompts:
   pool:
-    content: '{{ phrases.context }}, amusing in a pool, {{ phrases.mods }}'
+    content: "{{ phrases.context }}, amusing in a pool, {{ phrases.mods }}"
   bar:
-    content: '{{ phrases.context }}, amusing in a bar, {{ phrases.mods }}'
+    content: "{{ phrases.context }}, amusing in a bar, {{ phrases.mods }}"
   picnic:
-    content: '{{ phrases.context }}, amusing with a picnic, {{ phrases.mods }}'
+    content: "{{ phrases.context }}, amusing with a picnic, {{ phrases.mods }}"
   beach:
-    content: '{{ phrases.context }}, amusing on the beach, {{ phrases.mods }}'
+    content: "{{ phrases.context }}, amusing on the beach, {{ phrases.mods }}"
   studio:
-    content: '{{ phrases.context }}, amusing in a sex-studio, {{ phrases.mods }}'
+    content: "{{ phrases.context }}, amusing in a sex-studio, {{ phrases.mods }}"
   sofa:
-    content: '{{ phrases.context }}, amusing on a sofa, {{ phrases.mods }}'
+    content: "{{ phrases.context }}, amusing on a sofa, {{ phrases.mods }}"
   disco:
-    content: '{{ phrases.context }}, amusing in a disco, {{ phrases.mods }}'
+    content: "{{ phrases.context }}, amusing in a disco, {{ phrases.mods }}"
