@@ -12,6 +12,7 @@
     inference_steps: 70
     face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
     scale: 4
+    input_target: 0
     output: "{{ playbook_dir }}/output"
     giger: /usr/local/bin/giger
     batch_name: TODO
@@ -21,9 +22,7 @@
         - txt2img
         - upscale
         - roop
-      ansible.builtin.include_vars:
-        dir: projects
-        files_matching: "{{ project }}.yml"
+      ansible.builtin.include_vars: "projects/{{ project }}.yml"
     - name: Txt2img
       tags:
         - txt2img
@@ -48,21 +47,21 @@
     - name: Roop
       tags:
         - roop
-      loop: "{{ lookup('ansible.builtin.fileglob', '/'.join(('output', project,  batch_name, '_selected', '*.png')), wantlist=True) }}"
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '_selected', '*.png'))) }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
           - roop
           - -f={{ face }}
           - -i={{ item }}
-          - -o={{ item }}.swapped.png
-          - -t={{ (item | basename | split("."))[1] }}
+          - -o={{ item }}.swapped-{{ input_target }}.png
+          - -t={{ input_target  }}
       register: _output
       changed_when: _output.rc != 0
     - name: Upscale
       tags:
         - upscale
-      loop: "{{ lookup('ansible.builtin.fileglob', '/'.join((output, project, batch_name, '_selected', '*.png')), wantlist=True) }}"
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '_selected', '*.png'))) }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
