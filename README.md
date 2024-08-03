@@ -3,7 +3,7 @@
 ## Workflow
 
 ```bash
-ansible-playbook playbook.yml -e project=ivory_ebony_tattooed
+ansible-playbook playbook.yml -e project="plaisir/perverted" --tags txt2img
 ```
 
 ## Appendix

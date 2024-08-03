@@ -13,7 +13,7 @@
     face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
     scale: 4
     input_target: 0
-    output: "{{ playbook_dir }}/output"
+    output: "{{ playbook_dir }}/Output"
     giger: /usr/local/bin/giger
     batch_name: TODO
   tasks:
