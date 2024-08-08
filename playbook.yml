@@ -15,6 +15,7 @@
     input_target: 0
     output: "{{ playbook_dir }}/Output"
     giger: /usr/local/bin/giger
+    cwebp: cwebp
     batch_name: TODO
   tasks:
     - name: Init
@@ -22,6 +23,7 @@
         - txt2img
         - upscale
         - roop
+        - webp
       ansible.builtin.include_vars: "projects/{{ project }}.yml"
     - name: Txt2img
       tags:
@@ -69,5 +71,16 @@
           - -i={{ item }}
           - -o={{ item }}.upscaled.png
           - -s={{ scale | int }}
+      register: _output
+      changed_when: _output.rc != 0
+    - name: Webp
+      tags:
+        - webp
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '*.upscaled.png'))) }}"
+      ansible.builtin.command:
+        argv:
+          - "{{ cwebp }}"
+          - {{ item }}
+          - -o={{ item }}.webp
       register: _output
       changed_when: _output.rc != 0
