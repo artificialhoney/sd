@@ -1,5 +1,5 @@
 ---
-model: Lykon/DreamShaper
+model: stablediffusionapi/majicmix-v7
 width: 960
 height: 560
 phrases:
