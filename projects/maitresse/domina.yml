@@ -1,0 +1,10 @@
+---
+model: digiplay/majicMIX_realistic_v7
+width: 960
+height: 560
+phrases:
+  context: A portrait of a sexy beautiful mistress and domina, big breasts, short black hair, wearing a sexy magnificent black leather sado-maso domina outfit, black boots and a domina cap.
+  mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights
+prompts:
+  default:
+    content: "{{ phrases.context }}, {{ phrases.mods }}"
