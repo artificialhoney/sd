@@ -49,7 +49,7 @@
     - name: Roop
       tags:
         - roop
-      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '_selected', '*.png'))) }}"
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '*.png'))) }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
@@ -63,7 +63,7 @@
     - name: Upscale
       tags:
         - upscale
-      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '_selected', '*.png'))) }}"
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '*.png'))) }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
