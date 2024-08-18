@@ -80,7 +80,7 @@
       ansible.builtin.command:
         argv:
           - "{{ cwebp }}"
-          - {{ item }}
+          - "{{ item }}"
           - -o={{ item }}.webp
       register: _output
       changed_when: _output.rc != 0
