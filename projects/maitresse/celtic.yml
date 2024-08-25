@@ -14,9 +14,9 @@ prompts:
     content: "{{ phrases.context }}, in the art of an jaüpanese Anime, {{ phrases.mods }}"
   porn1:
     content: "{{ phrases.context }}, posing in the art of japanese porn, {{ phrases.mods }}"
-  seine:
-    content: "{{ phrases.context }}, posing in the art of japanese porn, {{ phrases.mods }}"
-  dame1:
-    content: "{{ phrases.context }}, posing in the art of japanese porn, {{ phrases.mods }}"
-  dame2:
-    content: "{{ phrases.context }}, posing in the art of japanese porn, {{ phrases.mods }}"
+  pon2:
+    content: "{{ phrases.context }}, posing in the art of japanese porn+, {{ phrases.mods }}"
+  porn3:
+    content: "{{ phrases.context }}, posing in the art of japanese porn-, {{ phrases.mods }}"
+  porn4:
+    content: "{{ phrases.context }}, posing in the art of japanese porn--, {{ phrases.mods }}"
