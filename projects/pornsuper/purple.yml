@@ -1,0 +1,22 @@
+---
+model: stablediffusionapi/majicmix-v7
+width: 560
+height: 960
+phrases:
+  context: A portrait of a magnificent sexy beautiful ginger-haired russian ballerina, big breasts, bun hair, ballet flats, dancing pose, wearing a sexy magnificent ballerina outfit
+  mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights, eye-level shot
+prompts:
+  rose:
+    content: "{{ phrases.context }}, classic rose outfit {{ phrases.mods }}"
+  colorful:
+    content: "{{ phrases.context }}, colorful paradise bird outfit {{ phrases.mods }}"
+  black:
+    content: "{{ phrases.context }}, black swan outfit, {{ phrases.mods }}"
+  purple:
+    content: "{{ phrases.context }}, purple rain outfit, {{ phrases.mods }}"
+  white:
+    content: "{{ phrases.context }}, white wedding outfit, {{ phrases.mods }}"
+  red:
+    content: "{{ phrases.context }}, black red flamenco outfit, {{ phrases.mods }}"
+  latex:
+    content: "{{ phrases.context }}, black latex outfit, {{ phrases.mods }}"
