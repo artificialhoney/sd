@@ -1,0 +1,15 @@
+---
+model: stablediffusionapi/majicmix-v7
+width: 560
+height: 960
+batch_size: 25
+phrases:
+  context: A portrait of a beautiful ginger-haired black forest maiden, big breasts, wearing only a sexy magnificent traditional black forest hat with sexy stockings and pumps
+  mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights, eye-level shot
+prompts:
+  forest:
+    content: "{{ phrases.context }}, posing in the black forest, {{ phrases.mods }}"
+  town:
+    content: "{{ phrases.context }}, posing in a typical black forest town, {{ phrases.mods }}"
+  lake:
+    content: "{{ phrases.context }}, posing on a typical black forest lake, {{ phrases.mods }}"
