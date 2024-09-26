@@ -10,7 +10,6 @@ phrases:
     forest: guardians of the forest, flowers bloom, butterflies and fireflies, ethereal aura, kaleidoscopic colors and textures, warm glow
     rose: beautiful bouquet of redish, pink and white roses, sunny bright day, white with rose petals
     futurism: techno-noir, vintage futurism, pan futurism, dystopian cyberpunk, neon-lit urban landscape, dark and gritty, high-tech
-    moon: surreal resin, pulsating with neon hues and mystical illumination, a colossal crescent moon melts into the water, leaving a luminous yellow trail
   base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
 prompts:
   lighting:
@@ -21,5 +20,3 @@ prompts:
     content: "{{ phrases.context }}, {{ phrases.style.rose }}, {{ phrases.base }}"
   futurism:
     content: "{{ phrases.context }}, {{ phrases.style.futurism }}, {{ phrases.base }}"
-  moon:
-    content: "{{ phrases.context }}, {{ phrases.style.moon }}, {{ phrases.base }}"
