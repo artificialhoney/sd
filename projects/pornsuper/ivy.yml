@@ -15,7 +15,3 @@ prompts:
     content: "{{ phrases.context }}, wearing sexy green latex, {{ phrases.style.bio }}, {{ phrases.base }}"
   lingerie:
     content: "{{ phrases.context }}, wearing sexy purple lingerie, {{ phrases.style.bio }}, {{ phrases.base }}"
-  dessous:
-    content: "{{ phrases.context }}, wearing sexy green dessous, {{ phrases.style.bio }}, {{ phrases.base }}"
-  mask:
-    content: "{{ phrases.context }}, wearing only a sexy eye-mask, {{ phrases.style.bio }}, {{ phrases.base }}"
