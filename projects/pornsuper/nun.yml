@@ -1,29 +1,30 @@
 ---
-model: stablediffusionapi/majicmix-v7
+model: stablediffusionapi/realistic-vision-v51
 width: 560
 height: 960
-batch_size: 25
+batch_size: 10
 phrases:
-  context: portrait of a stunning sexy ginger-haired porn actress, big breasts
-  base: dildo, masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
+  context: portrait of a stunning sexy (very fair-skinned) girl, big breasts, dressed as a sexy seductive sado-maso latex
+  mod: with a porn studio background
+  base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
 prompts:
   nun:
-    content: "{{ phrases.context }}, dressed as nun, {{ phrases.base }}"
+    content: "{{ phrases.context }} nun, {{ phrases.mod }}, {{ phrases.base }}"
   nurse:
-    content: "{{ phrases.context }}, dressed as nurse, {{ phrases.base }}"
+    content: "{{ phrases.context }} nurse, {{ phrases.mod }}, {{ phrases.base }}"
   schoolgirl:
-    content: "{{ phrases.context }}, dressed as schoolgirl, {{ phrases.base }}"
+    content: "{{ phrases.context }} schoolgirl, {{ phrases.mod }}, {{ phrases.base }}"
   maid:
-    content: "{{ phrases.context }}, dressed as maid, {{ phrases.base }}"
+    content: "{{ phrases.context }} maid, {{ phrases.mod }}, {{ phrases.base }}"
   domina:
-    content: "{{ phrases.context }}, dressed as domina, {{ phrases.base }}"
-  teacher:
-    content: "{{ phrases.context }}, dressed as teacher, {{ phrases.base }}"
+    content: "{{ phrases.context }} domina, {{ phrases.mod }}, {{ phrases.base }}"
+  slave:
+    content: "{{ phrases.context }} slave, {{ phrases.mod }}, {{ phrases.base }}"
   vampire:
-    content: "{{ phrases.context }}, dressed as vampire, {{ phrases.base }}"
+    content: "{{ phrases.context }} vampire, {{ phrases.mod }}, {{ phrases.base }}"
   punk:
-    content: "{{ phrases.context }}, dressed as punk, {{ phrases.base }}"
+    content: "{{ phrases.context }} punk, {{ phrases.mod }}, {{ phrases.base }}"
   ballerina:
-    content: "{{ phrases.context }}, dressed as ballerina, {{ phrases.base }}"
+    content: "{{ phrases.context }} ballerina, {{ phrases.mod }}, {{ phrases.base }}"
   geisha:
-    content: "{{ phrases.context }}, dressed as geisha, {{ phrases.base }}"
+    content: "{{ phrases.context }} geisha, {{ phrases.mod }}, {{ phrases.base }}"
