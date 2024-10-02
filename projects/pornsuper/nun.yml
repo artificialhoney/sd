@@ -4,8 +4,8 @@ width: 560
 height: 960
 batch_size: 25
 phrases:
-  context: portrait of a stunning sexy ginger-haired porn actress, big breasts, magnificent sexy costume, huge purple dildo
-  base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
+  context: portrait of a stunning sexy ginger-haired porn actress, big breasts
+  base: dildo, masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
 prompts:
   nun:
     content: "{{ phrases.context }}, dressed as nun, {{ phrases.base }}"
