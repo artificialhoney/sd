@@ -2,16 +2,10 @@
 model: Lykon/DreamShaper
 width: 560
 height: 960
-batch_size: 25
+batch_count: 100
 phrases:
   context: portrait of a stunning sexy french ginger-haired burlesque dancer, big breasts, sexy pose, sexy magnificent burlesque outfit as in the moulin rouge variety show
   base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
 prompts:
-  rouge_0:
-    content: "{{ phrases.context }}, {{ phrases.base }}"
-  rouge_1:
-    content: "{{ phrases.context }}, {{ phrases.base }}"
-  rouge_2:
-    content: "{{ phrases.context }}, {{ phrases.base }}"
-  rouge_3:
+  rouge:
     content: "{{ phrases.context }}, {{ phrases.base }}"
