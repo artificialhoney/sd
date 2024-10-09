@@ -1,0 +1,11 @@
+---
+model: Lykon/DreamShaper
+width: 560
+height: 960
+batch_count: 25
+phrases:
+  context: a full body photo shot of a gorgeous beautiful sexy mermaid ginger with red hair, big breasts, detailed green eyes
+  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+prompts:
+  neon:
+    content: "{{ phrases.context }}, neon colors that blend in with calavera make up, epic wonderful colourful underwaterworld, mystique, ancient ruins, {{ phrases.mods }}"
