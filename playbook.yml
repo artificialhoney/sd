@@ -46,7 +46,7 @@
           - --name={{ item.key }}
           - --lora_model=OedoSoldier/detail-tweaker-lora
           - --lora_filename=add_detail.safetensors
-          - --lora_scale={{ detail_scale | int }}
+          - --lora_scale={{ detail_scale | float }}
           - --bypass_safety
       register: _output
       changed_when: _output.rc != 0

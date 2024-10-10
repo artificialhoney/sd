@@ -3,9 +3,10 @@ model: stablediffusionapi/urpm-v13
 width: 560
 height: 960
 batch_count: 50
+detail_scale: 1.0
 phrases:
-  context: a full body photo shot of a gorgeous beautiful sexy cute ginger, big breasts
-  base: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  context: a full body photo shot of a gorgeous beautiful sexy cute ginger, big breasts, wearing red latex high-heels with stockings and little devil-horns
+  base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed
 prompts:
-  devil:
-    content: "{{ phrases.context }}, horny, hot, fiery, red latex, high-heels, stockings, bull horns, {{ phrases.base }}"
+  manor:
+    content: "{{ phrases.context }}, sexy posing in an magnificent ancient manor with fire-place, {{ phrases.base }}"
