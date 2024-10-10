@@ -1,5 +1,5 @@
 ---
-model: John6666/uber-realistic-porn-merge-xl-urpmxl-v3-sdxl
+model: stabilityai/stable-diffusion-xl-base-1.0
 width: 560
 height: 960
 batch_count: 50
