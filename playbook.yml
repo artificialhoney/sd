@@ -9,6 +9,7 @@
     height: 560
     batch_size: 4
     batch_count: 10
+    detail_scale: 1.0
     inference_steps: 70
     face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
     scale: 4
@@ -43,6 +44,9 @@
           - --batch_count={{ batch_count | int }}
           - --inference_steps={{ inference_steps | int }}
           - --name={{ item.key }}
+          - --lora_model=OedoSoldier/detail-tweaker-lora
+          - --lora_filename=add_detail.safetensors
+          - --lora_scale={{ detail_scale | int }}
           - --bypass_safety
       register: _output
       changed_when: _output.rc != 0

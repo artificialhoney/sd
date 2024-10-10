@@ -1,5 +1,5 @@
 ---
-model: stabilityai/stable-diffusion-xl-base-1.0
+model: stablediffusionapi/urpm-v13
 width: 560
 height: 960
 batch_count: 50
