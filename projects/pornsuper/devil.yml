@@ -4,10 +4,8 @@ width: 560
 height: 960
 batch_count: 50
 phrases:
-  context: a full body photo shot of a gorgeous cute ginger, big breasts
+  context: a full body photo shot of a gorgeous beautiful sexy cute ginger, big breasts
   base: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  domina:
-    content: "{{ phrases.context }}, hot, red, devil, domina, {{ phrases.base }}"
-  slave:
-    content: "{{ phrases.context }}, hot, red, devil, slave, {{ phrases.base }}"
+  devil:
+    content: "{{ phrases.context }}, horny, hot, fiery, red latex, high-heels, stockings, bull horns, {{ phrases.base }}"
