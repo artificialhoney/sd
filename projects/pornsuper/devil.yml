@@ -1,5 +1,5 @@
 ---
-model: stabilityai/stable-diffusion-3-medium
+model: stabilityai/stable-diffusion-3-medium-diffusers
 width: 560
 height: 960
 batch_count: 50
