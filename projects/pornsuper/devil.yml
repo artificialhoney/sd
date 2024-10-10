@@ -1,11 +1,13 @@
 ---
-model: stablediffusionapi/urpm-v13
+model: stabilityai/stable-diffusion-3-medium
 width: 560
 height: 960
 batch_count: 50
 phrases:
-  context: full body photo shot of a sexy gorgeous cute ginger, big breasts
+  context: a full body photo shot of a gorgeous cute ginger, big breasts
   base: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  devil:
-    content: "{{ phrases.context }}, wearing a magnificent red latex devil outfit, bonnet, horns, high-heels, stockings, body, gloves, tail, a dark background, {{ phrases.base }}"
+  domina:
+    content: "{{ phrases.context }}, hot, red, devil, domina, {{ phrases.base }}"
+  slave:
+    content: "{{ phrases.context }}, hot, red, devil, slave, {{ phrases.base }}"
