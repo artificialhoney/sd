@@ -1,0 +1,11 @@
+---
+model: stablediffusionapi/urpm-v13
+width: 560
+height: 960
+batch_count: 25
+phrases:
+  context: a full body photo shot of a gorgeous beautiful sexy cute ginger with pink hair, big breasts
+  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+prompts:
+  neon:
+    content: "{{ phrases.context }}, neon colors, tattoos, pink, punk, graffiti, {{ phrases.mods }}"

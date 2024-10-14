@@ -1,0 +1,17 @@
+---
+model: Lykon/DreamShaper
+width: 560
+height: 960
+batch_count: 10
+phrases:
+  context: portrait of a stunning sexy seductive french ginger-haired goth, big breasts, sexy pose, sexy magnificent black gothic dress with stockings
+  base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
+prompts:
+  cemetary:
+    content: "{{ phrases.context }}, in an old beautiful cemetary on a sunny morning, {{ phrases.base }}"
+  glade:
+    content: "{{ phrases.context }}, in an old beautiful glade on a sunny evening, {{ phrases.base }}"
+  lake:
+    content: "{{ phrases.context }}, on an old beautiful lake on a rainy afternoon, {{ phrases.base }}"
+  town:
+    content: "{{ phrases.context }}, in an old beautiful town in a clear night, {{ phrases.base }}"

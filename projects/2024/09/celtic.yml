@@ -1,0 +1,22 @@
+---
+model: stablediffusionapi/majicmix-v7
+width: 560
+height: 960
+phrases:
+  context: A portrait of a sexy beautiful ginger-haired celtic francais indian viking girl, big breasts, long braids, tattoos everywhere, wearing a sexy traditional japanese outfit, in a maginificent japanese Spa.
+  mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights, eye-level shot
+prompts:
+  rembrandt:
+    content: "{{ phrases.context }}, in the art of Rembrandt, {{ phrases.mods }}"
+  dali:
+    content: "{{ phrases.context }}, in the art of Salvatore Dali, {{ phrases.mods }}"
+  anime:
+    content: "{{ phrases.context }}, in the art of an jaüpanese Anime, {{ phrases.mods }}"
+  porn1:
+    content: "{{ phrases.context }}, posing in the art of japanese porn, {{ phrases.mods }}"
+  pon2:
+    content: "{{ phrases.context }}, posing in the art of japanese porn+, {{ phrases.mods }}"
+  porn3:
+    content: "{{ phrases.context }}, posing in the art of japanese porn-, {{ phrases.mods }}"
+  porn4:
+    content: "{{ phrases.context }}, posing in the art of japanese porn--, {{ phrases.mods }}"

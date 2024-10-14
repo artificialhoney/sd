@@ -1,0 +1,94 @@
+- name: SD
+  hosts: all
+  vars:
+    model: Lykon/DreamShaper
+    negative_prompt: |
+      The artwork avoids the pitfalls of bad art, such as ugly and deformed eyes and faces, poorly drawn, blurry, and disfigured bodies with extra limbs and close-ups that look weird. It also avoids other common issues such as watermarking, text errors, missing fingers or digits, cropping, poor quality, and JPEG artifacts. The artwork is free of signature or watermark and avoids framing issues. The hands are not deformed, the eyes are not disfigured, and there are no extra bodies or limbs. The artwork is not blurry, out of focus, or poorly drawn, and the proportions are not bad or deformed. There are no mutations, missing limbs, or floating or disconnected limbs. The hands and neck are not malformed, and there are no extra heads or out-of-frame elements. The artwork is not low-res or disgusting and is a well-drawn, highly detailed, and beautiful rendering. EasyNegative
+    width: 512
+    height: 912
+    batch_size: 4
+    batch_count: 10
+    inference_steps: 70
+    face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
+    scale: 4
+    input_target: -1
+    output: "{{ playbook_dir }}/output"
+    giger: giger
+    cwebp: cwebp
+    argv: []
+  tasks:
+    - name: Config
+      tags:
+        - txt2img
+        - upscale
+        - roop
+        - webp
+      ansible.builtin.include_vars: "{{ config }}"
+    - name: Facts
+      tags:
+        - txt2img
+        - upscale
+        - roop
+        - webp
+      ansible.builtin.set_fact:
+        project: "{{ (config | basename).split('.') | first }}"
+    - name: Txt2img
+      tags:
+        - txt2img
+      loop: "{{ prompts | dict2items | flatten(levels=1) }}"
+      ansible.builtin.command:
+        argv: "{{ giger_argv + argv | flatten }}"
+      vars:
+        giger_argv:
+          - "{{ giger }}"
+          - image
+          - -o={{ output }}/{{ project }}
+          - -p="{{ item.value.content }}"
+          - -n="{{ negative_prompt }}"
+          - --model={{ model }}
+          - --width={{ width | int }}
+          - --height={{ height | int }}
+          - --batch_size={{ batch_size | int }}
+          - --batch_count={{ batch_count | int }}
+          - --inference_steps={{ inference_steps | int }}
+          - --name={{ item.key }}
+      register: _output
+      changed_when: _output.rc != 0
+    - name: Roop
+      tags:
+        - roop
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '*.png'))) }}"
+      ansible.builtin.command:
+        argv:
+          - "{{ giger }}"
+          - roop
+          - -f={{ face }}
+          - -i={{ item }}
+          - -o={{ item }}.swapped-{{ input_target }}.png
+          - -t={{ input_target  }}
+      register: _output
+      changed_when: _output.rc != 0
+    - name: Upscale
+      tags:
+        - upscale
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '*.png'))) }}"
+      ansible.builtin.command:
+        argv:
+          - "{{ giger }}"
+          - upscale
+          - -i={{ item }}
+          - -o={{ item }}.upscaled.png
+          - -s={{ scale | int }}
+      register: _output
+      changed_when: _output.rc != 0
+    - name: Webp
+      tags:
+        - webp
+      with_fileglob: "{{ prompts | dict2items | flatten(levels=1) | map(attribute='key') | map('regex_replace','^(.+)$', '/'.join((output, project, '\\1', '*.upscaled.png'))) }}"
+      ansible.builtin.command:
+        argv:
+          - "{{ cwebp }}"
+          - "{{ item }}"
+          - -o={{ item }}.webp
+      register: _output
+      changed_when: _output.rc != 0

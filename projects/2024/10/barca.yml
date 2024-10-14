@@ -1,0 +1,9 @@
+---
+model: stablediffusionapi/urpm-v13
+batch_count: 50
+phrases:
+  context: a full body photo shot of a gorgeous beautiful sexy cute spanish ginger with pink hair, big breasts
+  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+prompts:
+  barca:
+    content: "{{ phrases.context }}, red, yellow, blue, sexy g-string, spain, sun, summer, streetart, butterfly, {{ phrases.mods }}"

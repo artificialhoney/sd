@@ -1,0 +1,22 @@
+---
+model: Lykon/DreamShaper
+width: 560
+height: 960
+batch_size: 25
+phrases:
+  context: portrait of a stunning sexy ginger-haired mouse girl, big breasts, sexy costume
+  style: 
+    lighting: particles of lighting, multi color lighting, transparent glass, full makeup, swirling energy, depth of filed
+    forest: guardians of the forest, flowers bloom, butterflies and fireflies, ethereal aura, kaleidoscopic colors and textures, warm glow
+    rose: beautiful bouquet of redish, pink and white roses, sunny bright day, white with rose petals
+    futurism: techno-noir, vintage futurism, pan futurism, dystopian cyberpunk, neon-lit urban landscape, dark and gritty, high-tech
+  base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
+prompts:
+  lighting:
+    content: "{{ phrases.context }}, {{ phrases.style.lighting }}, {{ phrases.base }}"
+  forest:
+    content: "{{ phrases.context }}, {{ phrases.style.forest }}, {{ phrases.base }}"
+  rose:
+    content: "{{ phrases.context }}, {{ phrases.style.rose }}, {{ phrases.base }}"
+  futurism:
+    content: "{{ phrases.context }}, {{ phrases.style.futurism }}, {{ phrases.base }}"
