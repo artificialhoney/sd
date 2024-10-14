@@ -10,8 +10,8 @@ argv:
   - --bypass_safety
 batch_count: 50
 phrases:
-  context: portrait of a gorgeous beautiful sexy french ginger mature domina, big breasts
+  context: portrait of a gorgeous beautiful sexy fat french ginger mature domina, big breasts
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
   beast:
-    content: "{{ phrases.context }}, red, latex, stockings, high-heels, devilkin, sado-maso, office, {{ phrases.mods }}"
+    content: "{{ phrases.context }}, wearing red stockings, high-heels and corsage, in a magnificent bathroom, with roses and candles decorated, {{ phrases.mods }}"
