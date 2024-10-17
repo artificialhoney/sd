@@ -1,0 +1,20 @@
+---
+model: stablediffusionapi/realistic-vision-v51
+argv:
+  - --lora_model
+  - OedoSoldier/detail-tweaker-lora
+  - niitokikei/EnvyBetterHands
+  - --lora_filename
+  - add_detail.safetensors
+  - GoodHands-beta2.safetensors
+  - --lora_scale
+  - 1.0
+  - 1.0
+  - --bypass_safety
+batch_count: 25
+phrases:
+  context: full body shot of a gorgeous beautiful sexy french ginger princess, big breasts
+  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+prompts:
+  pp:
+    content: "{{ phrases.context }}, wearing a magnificent sexy pink latex outfit with high-heels and stockings, posing sexy in her royal majestic bedroom, decorated with colorful flowers, {{ phrases.mods }}"
