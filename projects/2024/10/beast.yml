@@ -1,17 +1,7 @@
 ---
 model: stablediffusionapi/urpm-v13
-argv:
-  - --lora_model=OedoSoldier/detail-tweaker-lora
-  - --lora_filename=add_detail.safetensors
-  - --lora_scale=1.0
-  - --lora_model=niitokikei/EnvyBetterHands
-  - --lora_filename=GoodHands-beta2.safetensors
-  - --lora_scale=1.0
-  - --bypass_safety
-batch_count: 50
 phrases:
   context: portrait of a gorgeous beautiful sexy fat french ginger mature domina, big breasts
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  beast:
-    content: "{{ phrases.context }}, wearing red stockings, high-heels and corsage, in a magnificent bathroom, with roses and candles decorated, {{ phrases.mods }}"
+  beast: "{{ phrases.context }}, wearing red stockings, high-heels and corsage, in a magnificent bathroom, with roses and candles decorated, {{ phrases.mods }}"

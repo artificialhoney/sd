@@ -1,22 +1,13 @@
 ---
 model: stablediffusionapi/majicmix-v7
-width: 560
-height: 960
 phrases:
   context: A portrait of a sexy beautiful mistress and domina, big breasts, short black hair, wearing a sexy magnificent black leather sado-maso domina outfit, black boots and a domina cap.
   mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights
 prompts:
-  louvre:
-    content: "{{ phrases.context }}, posing in the Louvre in Paris, {{ phrases.mods }}"
-  tour:
-    content: "{{ phrases.context }}, posing in front of the Eiffel Tower in Paris, {{ phrases.mods }}"
-  montmartre:
-    content: "{{ phrases.context }}, posing in the streets near Montmartre in Paris, {{ phrases.mods }}"
-  versaille:
-    content: "{{ phrases.context }}, posing in front of the castle Versaille near Paris, {{ phrases.mods }}"
-  seine:
-    content: "{{ phrases.context }}, posing at a canal to the river Seine in Paris, {{ phrases.mods }}"
-  dame1:
-    content: "{{ phrases.context }}, posing in the cathedral of Notre-Dame in Paris, {{ phrases.mods }}"
-  dame2:
-    content: "{{ phrases.context }}, posing in front of the cathedral of Notre-Dame in Paris, {{ phrases.mods }}"
+  louvre: "{{ phrases.context }}, posing in the Louvre in Paris, {{ phrases.mods }}"
+  tour: "{{ phrases.context }}, posing in front of the Eiffel Tower in Paris, {{ phrases.mods }}"
+  montmartre: "{{ phrases.context }}, posing in the streets near Montmartre in Paris, {{ phrases.mods }}"
+  versaille: "{{ phrases.context }}, posing in front of the castle Versaille near Paris, {{ phrases.mods }}"
+  seine: "{{ phrases.context }}, posing at a canal to the river Seine in Paris, {{ phrases.mods }}"
+  dame1: "{{ phrases.context }}, posing in the cathedral of Notre-Dame in Paris, {{ phrases.mods }}"
+  dame2: "{{ phrases.context }}, posing in front of the cathedral of Notre-Dame in Paris, {{ phrases.mods }}"

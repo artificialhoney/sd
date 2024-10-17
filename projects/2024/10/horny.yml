@@ -1,22 +1,13 @@
 ---
 model: stablediffusionapi/majicmix-v7
-width: 560
-height: 960
 phrases:
   context: A portrait of a sexy beautiful magnificent ginger-haired fat russian mature porn star, big breasts, short hair, magnificent jewelery
   mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights, eye-level shot
 prompts:
-  natural:
-    content: "{{ phrases.context }}, wearing a sexy blue full bathing suite and bathing cap in a luxury spa, {{ phrases.mods }}"
-  leather:
-    content: "{{ phrases.context }}, wearing a sexy black and red leather outfit in a heavy-metal bar, {{ phrases.mods }}"
-  naked:
-    content: "{{ phrases.context }}, wearing almost nothing, sexy russian tattoos on her body in a luxury sauna, {{ phrases.mods }}"
-  silk:
-    content: "{{ phrases.context }}, wearing sexy white silk stockings, high-heels and body in an ancient restaurant, {{ phrases.mods }}"
-  latex1:
-    content: "{{ phrases.context }}, wearing a sexy red devil latex outfit in a modern sado-maso sex-studio, {{ phrases.mods }}"
-  latex2:
-    content: "{{ phrases.context }}, wearing a sexy black latex room-maid outfit with cap in a modern bedroom, {{ phrases.mods }}"
-  latex3:
-    content: "{{ phrases.context }}, wearing a sexy pink full latex suite with cap and platform-boots in a modern kitchen, {{ phrases.mods }}"
+  natural: "{{ phrases.context }}, wearing a sexy blue full bathing suite and bathing cap in a luxury spa, {{ phrases.mods }}"
+  leather: "{{ phrases.context }}, wearing a sexy black and red leather outfit in a heavy-metal bar, {{ phrases.mods }}"
+  naked: "{{ phrases.context }}, wearing almost nothing, sexy russian tattoos on her body in a luxury sauna, {{ phrases.mods }}"
+  silk: "{{ phrases.context }}, wearing sexy white silk stockings, high-heels and body in an ancient restaurant, {{ phrases.mods }}"
+  latex1: "{{ phrases.context }}, wearing a sexy red devil latex outfit in a modern sado-maso sex-studio, {{ phrases.mods }}"
+  latex2: "{{ phrases.context }}, wearing a sexy black latex room-maid outfit with cap in a modern bedroom, {{ phrases.mods }}"
+  latex3: "{{ phrases.context }}, wearing a sexy pink full latex suite with cap and platform-boots in a modern kitchen, {{ phrases.mods }}"

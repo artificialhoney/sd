@@ -1,26 +1,15 @@
 ---
 model: stablediffusionapi/urpm-v13
-width: 560
-height: 960
-batch_count: 20
 phrases:
   context: portrait of a sexy seductive ginger woman, big breasts, dressed as a
   mod: sexy magnificent black latex, with a porn studio background
   base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed
 prompts:
-  nun:
-    content: "{{ phrases.context }} nun, {{ phrases.mod }}, {{ phrases.base }}"
-  nurse:
-    content: "{{ phrases.context }} nurse, {{ phrases.mod }}, {{ phrases.base }}"
-  schoolgirl:
-    content: "{{ phrases.context }} schoolgirl, {{ phrases.mod }}, {{ phrases.base }}"
-  maid:
-    content: "{{ phrases.context }} maid, {{ phrases.mod }}, {{ phrases.base }}"
-  domina:
-    content: "{{ phrases.context }} domina, {{ phrases.mod }}, {{ phrases.base }}"
-  slave:
-    content: "{{ phrases.context }} slave, {{ phrases.mod }}, {{ phrases.base }}"
-  mature:
-    content: "{{ phrases.context }} mature, {{ phrases.mod }}, {{ phrases.base }}"
-  punk:
-    content: "{{ phrases.context }} punk, {{ phrases.mod }}, {{ phrases.base }}"
+  nun: "{{ phrases.context }} nun, {{ phrases.mod }}, {{ phrases.base }}"
+  nurse: "{{ phrases.context }} nurse, {{ phrases.mod }}, {{ phrases.base }}"
+  schoolgirl: "{{ phrases.context }} schoolgirl, {{ phrases.mod }}, {{ phrases.base }}"
+  maid: "{{ phrases.context }} maid, {{ phrases.mod }}, {{ phrases.base }}"
+  domina: "{{ phrases.context }} domina, {{ phrases.mod }}, {{ phrases.base }}"
+  slave: "{{ phrases.context }} slave, {{ phrases.mod }}, {{ phrases.base }}"
+  mature: "{{ phrases.context }} mature, {{ phrases.mod }}, {{ phrases.base }}"
+  punk: "{{ phrases.context }} punk, {{ phrases.mod }}, {{ phrases.base }}"

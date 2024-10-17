@@ -1,20 +1,7 @@
 ---
 model: stablediffusionapi/realistic-vision-v51
-argv:
-  - --lora_model
-  - OedoSoldier/detail-tweaker-lora
-  - niitokikei/EnvyBetterHands
-  - --lora_filename
-  - add_detail.safetensors
-  - GoodHands-beta2.safetensors
-  - --lora_scale
-  - 1.0
-  - 1.0
-  - --bypass_safety
-batch_count: 50
 phrases:
   context: portrait of a gorgeous beautiful sexy fat french ginger, sado-maso maid, big breasts, braids
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  ruff:
-    content: "{{ phrases.context }}, wearing a full black and white latex dress with high-heels, stockings, magnificent ruff and bonnet, collar, gloves, piercings, posing shy, in a magnificent manor with master bedroom with bed and warm lights, {{ phrases.mods }}"
+  ruff: "{{ phrases.context }}, wearing a full black and white latex dress with high-heels, stockings, magnificent ruff and bonnet, collar, gloves, piercings, posing shy, in a magnificent manor with master bedroom with bed and warm lights, {{ phrases.mods }}"

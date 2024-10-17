@@ -1,19 +1,11 @@
 ---
 model: stablediffusionapi/majicmix-v7
-width: 560
-height: 960
-batch_size: 25
 phrases:
   context: A portrait of a sexy beautiful ginger-haired russian business lady, big breasts, long hair, jewelery
   mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights, eye-level shot
 prompts:
-  office:
-    content: "{{ phrases.context }}, wearing sexy black glasses, stockings, pumps and a business dress, working in her modern glass office, {{ phrases.mods }}"
-  club:
-    content: "{{ phrases.context }}, wearing sexy black leather trousers, an elegant black shirt, high-heels, drinking a cocktail in an extraordinary techno club, {{ phrases.mods }}"
-  home:
-    content: "{{ phrases.context }}, wearing a magnificent pink satin leisure suit and cute slippers, enjoying her morning coffee at home in her modern kitchen, {{ phrases.mods }}"
-  pool:
-    content: "{{ phrases.context }}, wearing a sexy light blue bikini and g-string, relaxing in her magnificent private indoor pool, {{ phrases.mods }}"
-  park:
-    content: "{{ phrases.context }}, wearing a sexy colorful short sports dress, running through a beautiful old green park, {{ phrases.mods }}"
+  office: "{{ phrases.context }}, wearing sexy black glasses, stockings, pumps and a business dress, working in her modern glass office, {{ phrases.mods }}"
+  club: "{{ phrases.context }}, wearing sexy black leather trousers, an elegant black shirt, high-heels, drinking a cocktail in an extraordinary techno club, {{ phrases.mods }}"
+  home: "{{ phrases.context }}, wearing a magnificent pink satin leisure suit and cute slippers, enjoying her morning coffee at home in her modern kitchen, {{ phrases.mods }}"
+  pool: "{{ phrases.context }}, wearing a sexy light blue bikini and g-string, relaxing in her magnificent private indoor pool, {{ phrases.mods }}"
+  park: "{{ phrases.context }}, wearing a sexy colorful short sports dress, running through a beautiful old green park, {{ phrases.mods }}"

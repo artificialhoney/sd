@@ -1,17 +1,10 @@
 ---
 model: Lykon/DreamShaper
-width: 560
-height: 960
-batch_size: 25
 phrases:
   context: portrait of the stunning sexy ginger-haired poison ivy, big breasts
-  style:
-    bio: bloom, blossoms, biophilic design, floral, biopunk, goth, in the art of batman
+  style: bloom, blossoms, biophilic design, floral, biopunk, goth, in the art of batman
   base: masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography, cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
 prompts:
-  leaves:
-    content: "{{ phrases.context }}, wearing sexy green leaves, {{ phrases.style.bio }}, {{ phrases.base }}"
-  latex:
-    content: "{{ phrases.context }}, wearing sexy green latex, {{ phrases.style.bio }}, {{ phrases.base }}"
-  lingerie:
-    content: "{{ phrases.context }}, wearing sexy purple lingerie, {{ phrases.style.bio }}, {{ phrases.base }}"
+  leaves: "{{ phrases.context }}, wearing sexy green leaves, {{ phrases.style }}, {{ phrases.base }}"
+  latex: "{{ phrases.context }}, wearing sexy green latex, {{ phrases.style }}, {{ phrases.base }}"
+  lingerie: "{{ phrases.context }}, wearing sexy purple lingerie, {{ phrases.style }}, {{ phrases.base }}"

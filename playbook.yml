@@ -7,7 +7,7 @@
     width: 512
     height: 912
     batch_size: 4
-    batch_count: 10
+    batch_count: 25
     inference_steps: 70
     face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
     scale: 4
@@ -15,7 +15,17 @@
     output: "{{ playbook_dir }}/output"
     giger: giger
     cwebp: cwebp
-    argv: []
+    argv:
+      - --lora_model
+      - OedoSoldier/detail-tweaker-lora
+      - niitokikei/EnvyBetterHands
+      - --lora_filename
+      - add_detail.safetensors
+      - GoodHands-beta2.safetensors
+      - --lora_scale
+      - 1.0
+      - 1.0
+      - --bypass_safety
   tasks:
     - name: Config
       tags:
@@ -43,7 +53,7 @@
           - "{{ giger }}"
           - image
           - -o={{ output }}/{{ project }}
-          - -p="{{ item.value.content }}"
+          - -p="{{ item.value }}"
           - -n="{{ negative_prompt }}"
           - --model={{ model }}
           - --width={{ width | int }}

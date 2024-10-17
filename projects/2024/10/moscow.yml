@@ -1,14 +1,7 @@
 ---
 model: stablediffusionapi/urpm-v13
-argv:
-  - --lora_model=OedoSoldier/detail-tweaker-lora
-  - --lora_filename=add_detail.safetensors
-  - --lora_scale=1.0
-  - --bypass_safety
-batch_count: 50
 phrases:
   context: a full body photo shot of a gorgeous beautiful sexy cute russian ginger with pink hair, big breasts
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  moscow:
-    content: "{{ phrases.context }}, red, white, blue, purple, high-heels, stockings, panties, metro, mouse, {{ phrases.mods }}"
+  moscow: "{{ phrases.context }}, red, white, blue, purple, high-heels, stockings, panties, metro, mouse, {{ phrases.mods }}"

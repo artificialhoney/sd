@@ -1,20 +1,7 @@
 ---
 model: stablediffusionapi/urpm-v13
-argv:
-  - --lora_model
-  - OedoSoldier/detail-tweaker-lora
-  - niitokikei/EnvyBetterHands
-  - --lora_filename
-  - add_detail.safetensors
-  - GoodHands-beta2.safetensors
-  - --lora_scale
-  - 1.0
-  - 1.0
-  - --bypass_safety
-batch_count: 25
 phrases:
   context: a full body photo shot of a gorgeous beautiful sexy cute french ginger ballerina with pink hair, big breasts
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  ballerina:
-    content: "{{ phrases.context }}, pink, white, rose, light blue, latex, dance, boom, balloons, tinsel, happy, {{ phrases.mods }}"
+  ballerina: "{{ phrases.context }}, pink, white, rose, light blue, latex, dance, boom, balloons, tinsel, happy, {{ phrases.mods }}"

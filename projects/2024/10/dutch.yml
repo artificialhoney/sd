@@ -1,9 +1,7 @@
 ---
 model: stablediffusionapi/urpm-v13
-batch_count: 50
 phrases:
   context: a full body photo shot of a gorgeous beautiful sexy cute dutch ginger with pink hair, big breasts
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  cheese:
-    content: "{{ phrases.context }}, orange, light blue, sexy dutch maid dress, mini skirt, high-heels, stockings, amsterdam, techno, cheese, tulips, {{ phrases.mods }}"
+  cheese: "{{ phrases.context }}, orange, light blue, sexy dutch maid dress, mini skirt, high-heels, stockings, amsterdam, techno, cheese, tulips, {{ phrases.mods }}"
