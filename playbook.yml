@@ -24,7 +24,7 @@
         - roop
         - webp
       ansible.builtin.include_vars: "{{ config }}"
-    - name: Facts
+    - name: Setup
       tags:
         - txt2img
         - upscale
