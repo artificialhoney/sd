@@ -1,0 +1,7 @@
+---
+model: stablediffusionapi/realistic-vision-v51
+phrases:
+  context: portrait of a gorgeous beautiful sexy cute russian fat mature ginger house-wife, big breasts, short pixiecut
+  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+prompts:
+  latex: "{{ phrases.context }}, wearing a full purple latex body suit with pumps, horn-rimmed glasses and white neck ruff, looking seductive and lovely, in her magnificent modern kitchen, {{ phrases.mods }}"
