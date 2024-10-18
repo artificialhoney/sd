@@ -3,7 +3,7 @@
   vars:
     model: Lykon/DreamShaper
     negative_prompt: |
-      EasyNegative, lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature
+      EasyNegative, BadHands, lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature
     width: 512
     height: 912
     batch_size: 4
@@ -18,19 +18,19 @@
     argv:
       - --lora_model
       - OedoSoldier/detail-tweaker-lora
-      - niitokikei/EnvyBetterHands
       - --lora_filename
       - add_detail.safetensors
-      - GoodHands-beta2.safetensors
       - --lora_scale
-      - 1.0
       - 1.0
       - --inversion_model
       - embed/EasyNegative
+      - artificialhoney/bad-hands-5
       - --inversion_filename
       - EasyNegative.safetensors
+      - bad-hands-5.safetensors
       - --inversion_token
       - EasyNegative
+      - Badhands
       - --bypass_safety
   tasks:
     - name: Config
