@@ -25,6 +25,12 @@
       - --lora_scale
       - 1.0
       - 1.0
+      - --inversion_model
+      - embed/EasyNegative
+      - --inversion_filename
+      - EasyNegative.safetensors
+      - --inversion_token
+      - EasyNegative
       - --bypass_safety
   tasks:
     - name: Config
