@@ -1,7 +1,7 @@
 ---
 model: stablediffusionapi/urpm-v13
 phrases:
-  context: portrait of a gorgeous beautiful sexy cute russian fat ginger, big breasts, short pixiecut
+  context: a full body photo shot of a gorgeous beautiful sexy cute russian fat ginger, big breasts, short pixiecut
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
   mami: "{{ phrases.context }}, purple, golden, full latex body suit, pumps, neck ruff, rimmed glasses, magnificent, colorful, spectral, diamonds, {{ phrases.mods }}"
