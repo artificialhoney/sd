@@ -1,7 +1,0 @@
----
-model: Lykon/DreamShaper
-phrases:
-  context: A portrait of a beautiful fat ginger-haired butterfly girl, big breasts, pixie, very short hair
-  mods: lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights, eye-level shot
-prompts:
-  pink: "{{ phrases.context }}, wearing a magnificent sexy ornamented pink latex body and boots, magnificent tattoos, glitter, glam and rainbow colors, in a magic forest, {{ phrases.mods }}"

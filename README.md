@@ -3,7 +3,7 @@
 ## Workflow
 
 ```bash
-ansible-playbook playbook.yml -e config="projects/2024/10/beast.yml" --tags txt2img
+ansible-playbook playbook.yml -e config="examples/palina.yml" -e project="mermaid" --tags txt2img
 ```
 
 ## Appendix

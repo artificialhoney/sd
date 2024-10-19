@@ -1,7 +1,0 @@
----
-model: Lykon/DreamShaper
-phrases:
-  context: mystical ethereal ginger siren mermaid swimming deep in the oceans abyss surrounded by elements of gold silver and iridescent colors, captivating masterpiece whimsical depth, big breasts
-  base: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  mermaid: "{{ phrases.context }}, {{ phrases.base }}"

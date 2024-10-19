@@ -1,7 +1,0 @@
----
-model: stablediffusionapi/urpm-v13
-phrases:
-  context: portrait of a gorgeous beautiful sexy fat french ginger mature domina, big breasts
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  domina: "{{ phrases.context }}, black, latex, stockings, high-heels, sado-maso, wine-cellar, {{ phrases.mods }}"

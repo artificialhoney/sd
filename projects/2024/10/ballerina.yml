@@ -1,7 +1,0 @@
----
-model: stablediffusionapi/urpm-v13
-phrases:
-  context: a full body photo shot of a gorgeous beautiful sexy cute french ginger ballerina with pink hair, big breasts
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  ballerina: "{{ phrases.context }}, pink, white, rose, light blue, latex, dance, boom, balloons, tinsel, happy, {{ phrases.mods }}"

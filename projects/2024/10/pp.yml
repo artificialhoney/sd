@@ -1,7 +1,0 @@
----
-model: stablediffusionapi/realistic-vision-v51
-phrases:
-  context: full body shot of a gorgeous beautiful sexy french ginger princess, big breasts
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  pp: "{{ phrases.context }}, wearing a magnificent sexy pink latex outfit with high-heels and stockings, posing sexy in her royal majestic bedroom, decorated with colorful flowers, {{ phrases.mods }}"

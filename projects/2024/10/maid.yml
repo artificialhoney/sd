@@ -1,7 +1,0 @@
----
-model: stablediffusionapi/urpm-v13
-phrases:
-  context: portrait a gorgeous beautiful sexy cute french ginger room-maid, with pink hair, big breasts
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  maid: "{{ phrases.context }}, white, black, stockings, high-heels, panties, old building, {{ phrases.mods }}"

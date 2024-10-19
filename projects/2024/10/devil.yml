@@ -1,7 +1,0 @@
----
-model: stablediffusionapi/urpm-v13
-phrases:
-  context: a full body photo shot of a gorgeous beautiful sexy cute russian fat ginger devilkin, big breasts, undercut hairstyle
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  devil: "{{ phrases.context }}, wearing a full red latex suit and high-heels, in an ancient romantic sex temple with candle light, {{ phrases.mods }}"

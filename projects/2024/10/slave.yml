@@ -1,7 +1,0 @@
----
-model: stablediffusionapi/realistic-vision-v51
-phrases:
-  context: full body shot of a gorgeous beautiful sexy fat russian ginger sado-maso slave, big breasts, pink short bob haircut
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  slave: "{{ phrases.context }}, wearing a black latex body, stockings, high-heels, collar, gloves, shy sex pose, in a modern funky cosy master bedroom with warm lights, {{ phrases.mods }}"

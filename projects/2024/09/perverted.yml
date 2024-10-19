@@ -1,9 +1,0 @@
----
-model: digiplay/majicMIX_realistic_v7
-phrases:
-  intro: A scene of an adult erotic movie
-  context:
-    punk: one punk girl with pale skin and colored undercut-haircut, tattoos, sexy latex skirt and top and boots and magnificent hairband
-  mods: big breasts, lesbo, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetic lights
-prompts:
-  punk: "{{ phrases.intro }}, {{ phrases.context.punk }}, {{ phrases.mods }}"

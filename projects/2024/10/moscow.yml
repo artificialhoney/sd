@@ -1,7 +1,0 @@
----
-model: stablediffusionapi/urpm-v13
-phrases:
-  context: a full body photo shot of a gorgeous beautiful sexy cute russian ginger with pink hair, big breasts
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-prompts:
-  moscow: "{{ phrases.context }}, red, white, blue, purple, high-heels, stockings, panties, metro, mouse, {{ phrases.mods }}"
