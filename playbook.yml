@@ -13,8 +13,8 @@
       highly detailed, and beautiful rendering.
     width: 512
     height: 912
-    batch_size: 4
-    batch_count: 25
+    batch_size: 10
+    batch_count: 10
     inference_steps: 70
     scale: 4
     input_target: -1
