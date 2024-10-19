@@ -54,11 +54,10 @@
         - webp
       vars:
         config_name: "{{ config | basename | splitext | first }}"
-        output_path: "{{ [output, config_name, project] | path_join }}"
       ansible.builtin.set_fact:
         face_name: "{{ face | basename | splitext | first }}"
-        output_glob: "{{ [output_path, '*.png'] | path_join }}"
-        project_dict: "{{ lookup('ansible.builtin.vars', 'projects.' + project) }}"
+        output_path: "{{ [output, config_name, project] | path_join }}"
+        project_dict: "{{ projects[project] }}"
     - name: Txt2img
       tags:
         - txt2img
@@ -83,7 +82,7 @@
     - name: Roop
       tags:
         - roop
-      with_fileglob: "{{ output_glob }}"
+      with_fileglob: "{{ [output_path, '*.png'] | path_join }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
@@ -97,7 +96,7 @@
     - name: Upscale
       tags:
         - upscale
-      with_fileglob: "{{ output_glob }}"
+      with_fileglob: "{{ [output_path, '*.png'] | path_join }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
@@ -110,7 +109,7 @@
     - name: Webp
       tags:
         - webp
-      with_fileglob: "{{ output_glob }}"
+      with_fileglob: "{{ [output_path, '*.png'] | path_join }}"
       ansible.builtin.command:
         argv:
           - "{{ cwebp }}"
