@@ -1,5 +1,5 @@
 ---
-face: ./palina.png
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
 phrases:
   erotic: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
   cowboy:
