@@ -57,9 +57,9 @@
         giger_argv:
           - "{{ giger }}"
           - image
-          - -o={{ output }}/{{ project }}
-          - -p="{{ item.value }}"
-          - -n="{{ negative_prompt }}"
+          - "{{ item.value }}"
+          - --output={{ output }}/{{ project }}
+          - --negative_prompt={{ negative_prompt }}
           - --model={{ model }}
           - --width={{ width | int }}
           - --height={{ height | int }}
