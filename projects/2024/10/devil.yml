@@ -4,4 +4,4 @@ phrases:
   context: a full body photo shot of a gorgeous beautiful sexy cute russian fat devilkin, big breasts
   mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  devil: "{{ phrases.context }}, wearing a full red latex suit with full skin-tight bonnet around the whole head, in her modern magnificent office, {{ phrases.mods }}"
+  devil: "{{ phrases.context }}, wearing a full red latex suit with full skin-tight bonnet around the whole head, in her old manor with fireplace, {{ phrases.mods }}"
