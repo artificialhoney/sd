@@ -8,7 +8,7 @@
     batch_size: 4
     batch_count: 25
     inference_steps: 70
-    face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
+    face: "{{ playbook_dir }}/assets/faces/palina/palina.png"
     scale: 4
     input_target: -1
     output: "{{ playbook_dir }}/output"
@@ -46,7 +46,8 @@
         - roop
         - webp
       ansible.builtin.set_fact:
-        project: "{{ (config | basename).split('.') | first }}"
+        project: "{{ config | basename | splitext | first }}"
+        face_name: "{{ face | basename | splitext  | first }}"
     - name: Txt2img
       tags:
         - txt2img
@@ -79,7 +80,7 @@
           - roop
           - -f={{ face }}
           - -i={{ item }}
-          - -o={{ item }}.swapped-{{ input_target }}.png
+          - -o={{ item | splitext | first }}.{{ face_name }}.png
           - -t={{ input_target  }}
       register: _output
       changed_when: _output.rc != 0
@@ -92,7 +93,7 @@
           - "{{ giger }}"
           - upscale
           - -i={{ item }}
-          - -o={{ item }}.upscaled.png
+          - -o={{ item | splitext | first }}.upscaled.png
           - -s={{ scale | int }}
       register: _output
       changed_when: _output.rc != 0
@@ -104,6 +105,6 @@
         argv:
           - "{{ cwebp }}"
           - "{{ item }}"
-          - -o={{ item }}.webp
+          - -o={{ item | splitext | first }}.webp
       register: _output
       changed_when: _output.rc != 0
