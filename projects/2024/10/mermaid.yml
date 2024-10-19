@@ -1,7 +1,7 @@
 ---
-model: stablediffusionapi/urpm-v13
+model: Lykon/DreamShaper
 phrases:
-  context: a full body photo shot of a gorgeous beautiful sexy cute ginger with pink hair, big breasts
-  mods: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  context: mystical ethereal ginger siren mermaid swimming deep in the oceans abyss surrounded by elements of gold silver and iridescent colors, captivating masterpiece whimsical depth, big breasts
+  base: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 prompts:
-  neon: "{{ phrases.context }}, neon colors, tattoos, pink, punk, graffiti, {{ phrases.mods }}"
+  mermaid: "{{ phrases.context }}, {{ phrases.base }}"
