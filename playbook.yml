@@ -6,7 +6,7 @@
     width: 512
     height: 912
     batch_size: 4
-    batch_count: 10
+    batch_count: 25
     inference_steps: 70
     face: "{{ playbook_dir }}/assets/faces/palina/dirne.png"
     scale: 4
