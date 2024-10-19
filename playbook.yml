@@ -29,7 +29,7 @@
       - bad-hands-5.safetensors
       - --inversion_token
       - EasyNegative
-      - Badhands
+      - BadHands
       - --bypass_safety
   tasks:
     - name: Config
