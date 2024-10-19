@@ -1,8 +1,10 @@
 ---
 face: ./palina.png
 phrases:
-  context: mystical ethereal ginger siren mermaid swimming deep in the oceans abyss
-  style: surrounded by elements of gold silver and iridescent colors, captivating masterpiece whimsical depth, big breasts
+  context:
+    mystical ethereal ginger siren mermaid swimming deep in the oceans abyss surrounded by elements of gold silver and iridescent colors,
+    captivating masterpiece whimsical depth,
+    big breasts
   base: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 projects:
   mermaid:
