@@ -1,11 +1,20 @@
 ---
 face: ./palina.png
 phrases:
-  context:
-    mystical ethereal ginger siren mermaid swimming deep in the oceans abyss surrounded by elements of gold silver and iridescent colors,
-    captivating masterpiece whimsical depth,
-    big breasts
-  base: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  erotic: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  cowboy:
+    masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography,
+    cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
 projects:
   mermaid:
-    prompt: "{{ phrases.context }}, {{ phrases.base }}"
+    prompt:
+      mystical ethereal ginger siren mermaid swimming deep in the oceans abyss surrounded by elements of gold silver and iridescent colors,
+      captivating masterpiece whimsical depth,
+      big breasts,
+      {{ phrases.erotic }}
+  devil:
+    model: stablediffusionapi/urpm-v13
+    prompt:
+      a beautiful georgous fat russian ginger sado-maso devil, wearing a red full latex suit with collar and high-heels,
+      posing sexy in her magnificent private sado-maso torture chamber
+      {{ phrases.cowboy }}
