@@ -1,10 +1,11 @@
 ---
 face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
 phrases:
   erotic: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-  cowboy:
-    masterpiece, perfect anatomy, 32k UHD resolution, best quality, highres, realistic photo, professional photography,
-    cinematic angle, cinematic lights, brilliant, vibrant, vivid color, highest detailed, stunning composition, hyper emotional, cowboy shot
 projects:
   mermaid:
     prompt:
@@ -13,9 +14,17 @@ projects:
       big breasts,
       {{ phrases.erotic }}
   devil:
-    model: stablediffusionapi/urpm-v13
+    model: "{{ models.urpm }}"
     prompt:
       a portrait of a beautiful georgous fat russian ginger sado-maso devil, wearing a red full latex suit with collar and high-heels,
       big breasts,
-      seductively letting go in a magnificent temple of lust
+      seductively letting go in a magnificent temple of lust,
+      {{ phrases.erotic }}
+  butterfly:
+    model: "{{ models.urpm }}"
+    prompt:
+      A beautiful georgous ginger girl in a fairy costume,
+      wearing sexy stockings with high-heels and collar,
+      surrounded by pink peonies,
+      big breasts,
       {{ phrases.erotic }}
