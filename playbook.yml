@@ -58,21 +58,21 @@
     - name: Txt2img
       tags:
         - txt2img
-      with_sequence: start=1 end="{{ batch_count }}"
+      with_sequence: start=1 end="{{ project_dict.batch_count | default(batch_count) }}"
       ansible.builtin.command:
-        argv: "{{ giger_argv + (project_dict.argv | default(None) or argv) | flatten }}"
+        argv: "{{ giger_argv + (project_dict.argv | default(argv)) | flatten }}"
       vars:
         giger_argv:
           - "{{ giger }}"
           - image
           - "{{ project_dict.prompt }}"
           - --output={{ output_path }}
-          - --negative_prompt={{ project_dict.negative_prompt | default(None) or negative_prompt }}
-          - --model={{ project_dict.model | default(None) or model }}
-          - --width={{ (project_dict.width | default(None) or width) | int }}
-          - --height={{ (project_dict.height | default(None) or height) | int }}
-          - --batch_size={{ (project_dict.batch_size | default(None) or batch_size) | int }}
-          - --inference_steps={{ (project_dict.inference_steps | default(None) or inference_steps) | int }}
+          - --negative_prompt={{ project_dict.negative_prompt | default(negative_prompt) }}
+          - --model={{ project_dict.model | default(model) }}
+          - --width={{ (project_dict.width | default(width)) | int }}
+          - --height={{ (project_dict.height | default(height)) | int }}
+          - --batch_size={{ (project_dict.batch_size | default(batch_size)) | int }}
+          - --inference_steps={{ (project_dict.inference_steps | default(inference_steps)) | int }}
           - --name={{ project }}
       register: _output
       changed_when: _output.rc != 0
@@ -84,10 +84,10 @@
         argv:
           - "{{ giger }}"
           - roop
-          - -f={{ project_dict.face | default(None) or face }}
+          - -f={{ project_dict.face | default(face) }}
           - -i={{ item }}
-          - -o={{ item | splitext | first }}.{{ (project_dict.face | default(None) or face) | basename | splitext | first }}.png
-          - -t={{ (project_dict.input_target | default(None) or input_target) | int }}
+          - -o={{ item | splitext | first }}.{{ (project_dict.face | default(face)) | basename | splitext | first }}.png
+          - -t={{ (project_dict.input_target | default(input_target)) | int }}
       register: _output
       changed_when: _output.rc != 0
     - name: Upscale
@@ -100,7 +100,7 @@
           - upscale
           - -i={{ item }}
           - -o={{ item | splitext | first }}.upscaled.png
-          - -s={{ (project_dict.scale | default(None) or scale) | int }}
+          - -s={{ (project_dict.scale | default(scale)) | int }}
       register: _output
       changed_when: _output.rc != 0
     - name: Webp
