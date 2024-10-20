@@ -18,7 +18,7 @@
     inference_steps: 70
     scale: 4
     input_target: -1
-    output: ./output
+    output: output
     giger: giger
     cwebp: cwebp
     argv:
@@ -52,11 +52,8 @@
         - upscale
         - roop
         - webp
-      vars:
-        config_name: "{{ config | basename | splitext | first }}"
       ansible.builtin.set_fact:
-        face_name: "{{ face | basename | splitext | first }}"
-        output_path: "{{ [output, config_name, project] | path_join }}"
+        output_path: "{{ [output, (config | basename | splitext | first), project] | path_join }}"
         project_dict: "{{ projects[project] }}"
     - name: Txt2img
       tags:
@@ -87,10 +84,10 @@
         argv:
           - "{{ giger }}"
           - roop
-          - -f={{ face }}
+          - -f={{ project_dict.face | default(None) or face }}
           - -i={{ item }}
-          - -o={{ item | splitext | first }}.{{ face_name }}.png
-          - -t={{ input_target }}
+          - -o={{ item | splitext | first }}.{{ (project_dict.face | default(None) or face) | basename | splitext | first }}.png
+          - -t={{ (project_dict.input_target | default(None) or input_target) | int }}
       register: _output
       changed_when: _output.rc != 0
     - name: Upscale
@@ -103,7 +100,7 @@
           - upscale
           - -i={{ item }}
           - -o={{ item | splitext | first }}.upscaled.png
-          - -s={{ scale | int }}
+          - -s={{ (project_dict.scale | default(None) or scale) | int }}
       register: _output
       changed_when: _output.rc != 0
     - name: Webp
