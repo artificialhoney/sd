@@ -51,5 +51,15 @@ projects:
       in an elaborate different colored glitter, sparkle,
       glittery candy colored lolita latex outfit, very revealing,
       elaborate details in the outfit, very sexy, little sugar doll,
-      sugar babe, upskirt, big breasts
+      sugar babe, upskirt, big breasts,
+      {{ phrases.erotic }}
+  heroine:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Grunge style, stylish ginger female, a formidable heroine, big breasts,
+      gothic fantasy, warrior bikini, dark allure,
+      formidable armor, ornate engravings, demonic motifs, spiked gauntlets, leather corset, skull ornaments, mystical symbols,
+      ethereal glow, fierce countenance, haunting beauty, moonlit battlefield,
+      eerie lighting, sinister hues, intricate patterns,
+      textured, distressed, vintage, edgy, punk rock vibe, dirty, noisy,
       {{ phrases.erotic }}
