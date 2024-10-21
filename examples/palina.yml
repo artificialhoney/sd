@@ -44,3 +44,12 @@ projects:
       She is a maid in a very luxurious mansion.
       Transparent Dessous parts, pink black, purple black, she is cleaning the room, cut-out chain harness, upskirt, big breasts,
       {{ phrases.erotic }}
+  candy:
+    model: "{{ models.urpm }}"
+    prompt:
+      A candy colored sweet ginger woman, very erotic,
+      in an elaborate different colored glitter, sparkle,
+      glittery candy colored lolita latex outfit, very revealing,
+      elaborate details in the outfit, very sexy, little sugar doll,
+      sugar babe, upskirt, big breasts
+      {{ phrases.erotic }}
