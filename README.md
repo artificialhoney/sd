@@ -31,6 +31,10 @@ ansible-playbook playbook.yml -e config="examples/palina.yml" -e project="mermai
 
 See [examples/palina.yml](examples/palina.yml) for valid projects configuration.
 
+<a target="_blank" href="https://colab.research.google.com/github/artificialhoney/sd/blob/main/examples/palina.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 ## License
 
 Licensed under the [MIT License](LICENSE.txt) (MIT).
