@@ -63,3 +63,10 @@ projects:
       eerie lighting, sinister hues, intricate patterns,
       textured, distressed, vintage, edgy, punk rock vibe, dirty, noisy,
       {{ phrases.erotic }}
+  elf:
+    model: "{{ models.urpm }}"
+    prompt:
+      beautiful 20 year old naked ginger elf girl in a sexy pose in the garden with well, surrounded by exotic flowers,
+      a perfect small ass, long pink hair, straight hair, diadem in the hair,
+      huge tits, round perfect tits, tiny nipples, sunshine,
+      {{ phrases.erotic }}
