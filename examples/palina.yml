@@ -8,23 +8,32 @@ phrases:
   erotic: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 projects:
   mermaid:
+    model: "{{ models.dreamshaper }}"
     prompt:
-      mystical ethereal ginger siren mermaid swimming deep in the oceans abyss surrounded by elements of gold silver and iridescent colors,
-      captivating masterpiece whimsical depth,
-      big breasts,
+      mystical ethereal ginger siren mermaid swimming deep in the oceans abyss,
+      surrounded by elements of gold silver and iridescent colors,
+      captivating masterpiece whimsical depth, big breasts,
       {{ phrases.erotic }}
   devil:
     model: "{{ models.urpm }}"
     prompt:
-      a portrait of a beautiful georgous fat russian ginger sado-maso devil, wearing a red full latex suit with collar and high-heels,
-      big breasts,
-      seductively letting go in a magnificent temple of lust,
+      a portrait of a beautiful georgous fat russian ginger sado-maso devil,
+      wearing a red full latex suit with collar and high-heels,
+      big breasts, seductively letting go in a magnificent temple of lust,
       {{ phrases.erotic }}
   butterfly:
     model: "{{ models.urpm }}"
     prompt:
       A beautiful georgous ginger girl in a fairy costume,
       wearing sexy stockings with high-heels and collar,
-      surrounded by pink peonies,
-      big breasts,
+      surrounded by pink peonies, big breasts,
+      {{ phrases.erotic }}
+  lolita:
+    model: "{{ models.urpm }}"
+    prompt:
+      An erotic ginger girl is wearing a short erotic dress made of transparent, colorful plastic.
+      The dress is modern and eye-catching, the bright colors shine through the translucent material.
+      The woman's behavior suggests fun and boldness, she embraces the unconventional nature of her clothing.
+      Very detailed, beautiful body and face, intricate plastic shelves, plastic over-the-knee socks,
+      lolita-style outfit, cut out, harness, big breasts,
       {{ phrases.erotic }}
