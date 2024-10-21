@@ -1,0 +1,18 @@
+---
+models:
+  dreamshaper: Lykon/DreamShaper
+  counterfeit: stablediffusionapi/counterfeit-v30
+  majicmix: stablediffusionapi/majicmix-v7
+phrases:
+  base: aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+projects:
+  samurai:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      Grunge style, stylish samurai, a formidable hero,
+      gothic fantasy, dark allure,
+      formidable armor, ornate engravings, demonic motifs, skull ornaments, mystical symbols,
+      ethereal glow, fierce countenance, moonlit battlefield,
+      eerie lighting, sinister hues, intricate patterns,
+      textured, distressed, vintage, edgy, punk rock vibe, dirty, noisy,
+      {{ phrases.base }}

@@ -71,13 +71,3 @@ projects:
       standing in a frozen wasteland, snow covered mountains, blizzard, wind, ice, sleet,
       magical, fantastical, enchanting,
       {{ phrases.erotic }}
-  warrior:
-    model: "{{ models.dreamshaper }}"
-    prompt:
-      a beautiful ginger woman,
-      dressed in medieval warrior costume,
-      golden metal armor,
-      in the middle of the dark forest,
-      with a flaming sword in her hand,
-      big breats,
-      {{ phrases.erotic }}
