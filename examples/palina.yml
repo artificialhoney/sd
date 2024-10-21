@@ -37,3 +37,10 @@ projects:
       Very detailed, beautiful body and face, intricate plastic shelves, plastic over-the-knee socks,
       lolita-style outfit, cut out, harness, big breasts,
       {{ phrases.erotic }}
+  upskirt:
+    model: "{{ models.urpm }}"
+    prompt:
+      An erotic ginger girl, she wears a very seductive, maid lolita lingerie style outfit in different coloured latex.
+      She is a maid in a very luxurious mansion.
+      Transparent Dessous parts, pink black, purple black, she is cleaning the room, cut-out chain harness, upskirt, big breasts,
+      {{ phrases.erotic }}
