@@ -88,6 +88,7 @@
           - -i={{ item }}
           - -o={{ item | splitext | first }}.{{ (project_dict.face | default(face)) | basename | splitext | first }}.png
           - -t={{ (project_dict.input_target | default(input_target)) | int }}
+          - -e
       register: _output
       changed_when: _output.rc != 0
     - name: Upscale
