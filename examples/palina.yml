@@ -75,7 +75,7 @@ projects:
     model: "{{ models.dreamshaper }}"
     prompt:
       Ancient greek ginger goddess, jewelry accessoires,
-      full-body, erotic make-up, lipgloss, painted fingernails,
+      full-body, erotic make-up, lipgloss,
       in an ancient luxurious temple, dynamic lights, shiny, glitter,
       overknee perlmutt transparent socks,
       {{ phrases.erotic }}
