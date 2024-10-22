@@ -5,28 +5,28 @@ models:
   urpm: stablediffusionapi/urpm-v13
   majicmix: stablediffusionapi/majicmix-v7
 phrases:
-  erotic: erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  erotic: big breasts, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
 projects:
   mermaid:
     model: "{{ models.dreamshaper }}"
     prompt:
       mystical ethereal ginger siren mermaid swimming deep in the oceans abyss,
       surrounded by elements of gold silver and iridescent colors,
-      captivating masterpiece whimsical depth, big breasts,
+      captivating masterpiece whimsical depth,
       {{ phrases.erotic }}
   devil:
     model: "{{ models.urpm }}"
     prompt:
       a portrait of a beautiful georgous fat russian ginger sado-maso devil,
       wearing a red full latex suit with collar and high-heels,
-      big breasts, seductively letting go in a magnificent temple of lust,
+      seductively letting go in a magnificent temple of lust,
       {{ phrases.erotic }}
   butterfly:
     model: "{{ models.urpm }}"
     prompt:
       A beautiful georgous ginger girl in a fairy costume,
       wearing sexy stockings with high-heels and collar,
-      surrounded by pink peonies, big breasts,
+      surrounded by pink peonies,
       {{ phrases.erotic }}
   lolita:
     model: "{{ models.urpm }}"
@@ -35,14 +35,14 @@ projects:
       The dress is modern and eye-catching, the bright colors shine through the translucent material.
       The woman's behavior suggests fun and boldness, she embraces the unconventional nature of her clothing.
       Very detailed, beautiful body and face, intricate plastic shelves, plastic over-the-knee socks,
-      lolita-style outfit, cut out, harness, big breasts,
+      lolita-style outfit, cut out, harness,
       {{ phrases.erotic }}
   upskirt:
     model: "{{ models.urpm }}"
     prompt:
       An erotic ginger girl, she wears a very seductive, maid lolita lingerie style outfit in different coloured latex.
       She is a maid in a very luxurious mansion.
-      Transparent Dessous parts, pink black, purple black, she is cleaning the room, cut-out chain harness, upskirt, big breasts,
+      Transparent Dessous parts, pink black, purple black, she is cleaning the room, cut-out chain harness, upskirt,
       {{ phrases.erotic }}
   candy:
     model: "{{ models.urpm }}"
@@ -51,12 +51,12 @@ projects:
       in an elaborate different colored glitter, sparkle,
       glittery candy colored lolita latex outfit, very revealing,
       elaborate details in the outfit, very sexy, little sugar doll,
-      sugar babe, upskirt, big breasts,
+      sugar babe, upskirt,
       {{ phrases.erotic }}
   heroine:
     model: "{{ models.dreamshaper }}"
     prompt:
-      Grunge style, stylish ginger female, a formidable heroine, big breasts,
+      Grunge style, stylish ginger female, a formidable heroine,
       gothic fantasy, warrior bikini, dark allure,
       formidable armor, ornate engravings, demonic motifs, spiked gauntlets, leather corset, skull ornaments, mystical symbols,
       ethereal glow, fierce countenance, haunting beauty, moonlit battlefield,
@@ -70,4 +70,12 @@ projects:
       fair complexion, full body, wearing white and blue robes,
       standing in a frozen wasteland, snow covered mountains, blizzard, wind, ice, sleet,
       magical, fantastical, enchanting,
+      {{ phrases.erotic }}
+  goddess:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Ancient greek ginger goddess, jewelry accessoires,
+      full-body, erotic make-up, lipgloss, painted fingernails,
+      in a ancient luxurious temple, dynamic lights, shiny, glitter,
+      overknee perlmutt transparent socks,
       {{ phrases.erotic }}
