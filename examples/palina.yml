@@ -95,3 +95,11 @@ projects:
       while her majestic wings radiate a sense of fierce elegance.
       This masterfully crafted artwork captures the essence of a supernatural warrior in a mesmerizing and captivating way.
       {{ phrases.erotic }}
+  combat:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Beautiful hyperrealistic photograph of cute young ginger woman with runic tattoos,
+      dirty face blood splattered, wearing full heavy mecha armor, combat harness, Neon highlights, undercut hairstyle, combat pose,
+      exterior of destroyed building, fires, smoke, debris, camo netting, ammo boxes, rain, stormy, wet,
+      abstract beauty, near perfection, pure form, intricate detail,
+      {{ phrases.erotic }}
