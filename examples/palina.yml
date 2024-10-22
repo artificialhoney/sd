@@ -76,6 +76,13 @@ projects:
     prompt:
       Ancient greek ginger goddess, jewelry accessoires,
       full-body, erotic make-up, lipgloss, painted fingernails,
-      in a ancient luxurious temple, dynamic lights, shiny, glitter,
+      in an ancient luxurious temple, dynamic lights, shiny, glitter,
       overknee perlmutt transparent socks,
+      {{ phrases.erotic }}
+  queen:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      A very beautiful ginger queen sitting on a black throne made of gold,
+      with a serpent-dragon like elements and design,
+      intricate details, dramatic lighting, hyperrealism,
       {{ phrases.erotic }}
