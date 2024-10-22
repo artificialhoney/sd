@@ -86,3 +86,12 @@ projects:
       with a serpent-dragon like elements and design,
       intricate details, dramatic lighting, hyperrealism,
       {{ phrases.erotic }}
+  valkyrie:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      A very beautiful ginger valkyrie, flowing hair, stands stoic and powerful on a viking battlefield.
+      This image showcases the valkyrie's intricate armor and ethereal aura with stunning detail and precision.
+      The intricate patterns etched into her breastplate shimmer with an otherworldly glow,
+      while her majestic wings radiate a sense of fierce elegance.
+      This masterfully crafted artwork captures the essence of a supernatural warrior in a mesmerizing and captivating way.
+      {{ phrases.erotic }}
