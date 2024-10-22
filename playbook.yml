@@ -43,14 +43,14 @@
       tags:
         - txt2img
         - upscale
-        - roop
+        - swap
         - webp
       ansible.builtin.include_vars: "{{ config }}"
     - name: Setup
       tags:
         - txt2img
         - upscale
-        - roop
+        - swap
         - webp
       ansible.builtin.set_fact:
         output_path: "{{ [output, (config | basename | splitext | first), project] | path_join }}"
@@ -76,14 +76,14 @@
           - --name={{ project }}
       register: _output
       changed_when: _output.rc != 0
-    - name: Roop
+    - name: Swap
       tags:
-        - roop
+        - swap
       with_fileglob: "{{ [output_path, '*.png'] | path_join }}"
       ansible.builtin.command:
         argv:
           - "{{ giger }}"
-          - roop
+          - swap
           - -f={{ project_dict.face | default(face) }}
           - -i={{ item }}
           - -o={{ item | splitext | first }}.{{ (project_dict.face | default(face)) | basename | splitext | first }}.png

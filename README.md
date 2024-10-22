@@ -20,7 +20,7 @@ ansible-playbook playbook.yml -e config="examples/palina.yml" -e project="mermai
 **Swap face in generated images**
 
 ```bash
-ansible-playbook playbook.yml -e config="examples/palina.yml" -e project="mermaid" --tags roop
+ansible-playbook playbook.yml -e config="examples/palina.yml" -e project="mermaid" --tags swap
 ```
 
 **Upscale images**
