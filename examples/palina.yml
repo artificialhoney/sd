@@ -113,3 +113,12 @@ projects:
       Her fangs are prominently visible as she smiles, exuding a mix of menace and seduction.
       The background features gothic architecture, enhancing the dark and mysterious atmosphere.
       {{ phrases.erotic }}
+  viking:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful viking woman,
+      formidable armor, ornate engravings, runes,
+      her upper body is tattooed,
+      she has long ginger braided hair and green eyes,
+      nordic surroundings, nordic sea, sunbeam shadow play,
+      {{ phrases.erotic }}
