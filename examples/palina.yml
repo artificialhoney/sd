@@ -99,7 +99,17 @@ projects:
     model: "{{ models.dreamshaper }}"
     prompt:
       Beautiful hyperrealistic photograph of cute young ginger woman with runic tattoos,
-      dirty face blood splattered, wearing full heavy mecha armor, combat harness, Neon highlights, undercut hairstyle, combat pose,
+      dirty face blood splattered, wearing full heavy mecha armor, combat harness, neon highlights, undercut hairstyle, combat pose,
       exterior of destroyed building, fires, smoke, debris, camo netting, ammo boxes, rain, stormy, wet,
       abstract beauty, near perfection, pure form, intricate detail,
+      {{ phrases.erotic }}
+  vampire:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      A stunning ginger female vampire stands in a dimly lit gothic setting.
+      Flowing long red hair, contrasting sharply with her pale skin.
+      Her eyes glow with an eerie, captivating light, adding to her otherworldly allure.
+      She wears an elegant, dark dress that accentuates her slender figure.
+      Her fangs are prominently visible as she smiles, exuding a mix of menace and seduction.
+      The background features gothic architecture, enhancing the dark and mysterious atmosphere.
       {{ phrases.erotic }}
