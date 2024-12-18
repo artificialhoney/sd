@@ -122,3 +122,13 @@ projects:
       she has long ginger braided hair and green eyes,
       nordic surroundings, nordic sea, sunbeam shadow play,
       {{ phrases.erotic }}
+  cowgirl:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful cowgirl woman,
+      blue jeans, sexy cowboy boots with spurs,
+      formidable belt buckle, sexy flannel top, horse harness,
+      her arms and body are tattooed,
+      she has long ginger braided hair and green eyes,
+      on a farm, desert surroundings, cactus, sunbeam shadow play,
+      {{ phrases.erotic }}
