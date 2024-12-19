@@ -140,3 +140,11 @@ projects:
       she has long ginger braided hair and green eyes,
       on a alien planet, jungle surroundings, exotic flowers, sunbeam shadow play,
       {{ phrases.erotic }}
+  ninja:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful ninja woman,
+      formidable black japanese carbon combat suit, japanese katana sword, bow and arrows
+      she has long ginger braided hair and green eyes,
+      in an ancient japanese village, a dark rainy night, full moon shadow play,
+      {{ phrases.erotic }}
