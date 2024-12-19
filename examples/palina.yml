@@ -132,3 +132,11 @@ projects:
       she has long ginger braided hair and green eyes,
       on a farm, desert surroundings, cactus, sunbeam shadow play,
       {{ phrases.erotic }}
+  huntress:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful alien huntress woman,
+      formidable carbon metallic combat suit, laser gun,
+      she has long ginger braided hair and green eyes,
+      on a alien planet, jungle surroundings, exotic flowers, sunbeam shadow play,
+      {{ phrases.erotic }}
