@@ -158,3 +158,12 @@ projects:
       she has ginger braided hair and green eyes,
       in a beautiful north-american forest, surrounded by mountains, a shiny summer day,
       {{ phrases.erotic }}
+  finish:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful finish viking rogue woman,
+      a magnificent leather armor, nordic metal runes and ornaments,
+      heavy leather boots and cape, dirty,
+      she has a very short ginger mohawk haircut and green eyes,
+      during the finish winter, a shiny day, ice reflecting the sun.
+      {{ phrases.erotic }}
