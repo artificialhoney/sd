@@ -181,3 +181,12 @@ projects:
       at sun dawn in a beautiful Tokyo rich suburbian springtime apartment,
       funky purple-pink-orange lights, cool and mature atmosphere, drinks.
       {{ phrases.erotic }}
+  cheeky:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful sexy cute cheeky ginger dutch raver girl,
+      super sexy orange-white-light-blue latex dress, top, hot-pants,
+      sexy black platform-boots and pink nylons, nose-piercing, freckels,
+      a fat sound-system in the back, dancing, posing, crying, jumping to dutch techno music,
+      in the dunes, a fresh summer breeze on a beautiful summer day in the netherlands.
+      {{ phrases.erotic }}
