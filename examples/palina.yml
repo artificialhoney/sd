@@ -167,3 +167,12 @@ projects:
       she has a very short ginger mohawk haircut and green eyes,
       during the finish winter, a shiny day, ice reflecting the sun.
       {{ phrases.erotic }}
+  babe:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a colorful sweet ginger woman, very erotic,
+      in an elaborate different colored glitter, sparkle,
+      glittery candy colored lolita latex outfit, very revealing,
+      elaborate details in the outfit, very sexy, little sugar doll,
+      sugar babe, upskirt, rainbows, unicorns and candy
+      {{ phrases.erotic }}
