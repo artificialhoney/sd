@@ -201,3 +201,13 @@ projects:
       with a huge purple dildo,
       letting her go on a massage chair in a SM studio.
       {{ phrases.erotic }}
+  witch:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful sexy black magic demon,
+      a witch, long ginger hair, demonical make-up, glowing green eyes,
+      wearing a simple dark green hooded cape.
+      She summons the ghosts of the elder, on a lost fireplace,
+      deep inside an enchanted forest.
+      Magic sparks and moonlight enlight the scene. 
+      {{ phrases.erotic }}
