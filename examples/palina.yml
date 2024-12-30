@@ -184,10 +184,20 @@ projects:
   cheeky:
     model: "{{ models.dreamshaper }}"
     prompt:
-      full body shot, beautiful sexy cute cheeky cool dutch raver girl,
+      full body shot, a beautiful sexy cute cheeky cool dutch raver girl,
       ginger hair with braids,
       super sexy orange latex dress,
       sexy black platform-boots, nose-piercing, freckels,
       dancing to dutch techno music,
       a fresh summer breeze on a beautiful summer day in the netherlands.
+      {{ phrases.erotic }}
+  mature:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful seductive fat russian ginger mature domina,
+      black horn-rimmed glasses, a black latex necklace,
+      a latex body with free breasts and vagina,
+      sexy black high-heels, latex stockings, breast piercings,
+      with a huge purple dildo,
+      letting her go on a massage chair in a SM studio.
       {{ phrases.erotic }}
