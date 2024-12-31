@@ -10,9 +10,9 @@ projects:
   mermaid:
     model: "{{ models.dreamshaper }}"
     prompt:
-      mystical ethereal ginger siren mermaid swimming deep in the oceans abyss,
+      The Beginning — mystical ethereal ginger siren mermaid swimming deep in the oceans abyss,
       surrounded by elements of gold silver and iridescent colors,
-      captivating masterpiece whimsical depth,
+      captivating masterpiece whimsical depth.
       {{ phrases.erotic }}
   devil:
     model: "{{ models.urpm }}"

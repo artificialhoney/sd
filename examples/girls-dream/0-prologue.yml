@@ -1,0 +1,39 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+  counterfeit: stablediffusionapi/counterfeit-v30
+phrases:
+  standard: aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  manga: A japanese manga comic scene.
+projects:  
+  wake_up:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      {{ phrases.manga }}
+      Wake Up – a cute litle ginger girl lying sleeping in her childrooms's bed.
+      She looks lovely, wearing a cute pyjama.
+      The childroom is decorated colorfully with toys and posters.
+      Her cute baby french bulldog is sleeping on the carpet in front of the bed.
+      It is a marvelous morning in spring, flowers and trees are blooming.
+      {{ phrases.standard }}
+  at_school:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      {{ phrases.manga }}
+      At School – 
+      {{ phrases.standard }}
+  the_training:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      {{ phrases.manga }}
+      The Training –  
+      {{ phrases.standard }}
+  good_night:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      {{ phrases.manga }}
+      Good Night –  
+      {{ phrases.standard }}
