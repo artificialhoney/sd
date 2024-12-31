@@ -1,5 +1,7 @@
 ---
 face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+width: 912
+height: 512
 models:
   dreamshaper: Lykon/DreamShaper
   urpm: stablediffusionapi/urpm-v13
