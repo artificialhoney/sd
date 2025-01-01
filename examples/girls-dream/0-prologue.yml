@@ -24,21 +24,27 @@ projects:
   to_school:
     model: "{{ models.counterfeit }}"
     prompt:
-      At School – a cute little ginger girl going to school.
+      To School – a cute little ginger girl going to school.
       She looks happy and smiles, wearing a cool bear pullover hood.
       Her cute baby french bulldog is walking beside her.
       It is a marvelous morning in spring, flowers and trees are blooming.
       {{ phrases.manga }}
       {{ phrases.standard }}
-  the_training:
+  at_school:
     model: "{{ models.counterfeit }}"
     prompt:
-      The Training –  
+      At School – a cute little ginger girl in a school class.
+      She looks curious and is reading in a book, sitting on her desk.
+      Her cute baby french bulldog is sitting beside her.
+      It is a marvelous morning in spring, flowers and trees are blooming.
       {{ phrases.manga }}
       {{ phrases.standard }}
-  good_night:
+  the_lunch:
     model: "{{ models.counterfeit }}"
     prompt:
-      Good Night –  
+      The Lunch – a cute little ginger girl sitting on a park bank.
+      She looks very happy, eating a yummy sandwich.
+      Her cute baby french bulldog is sitting beside her, also eating yummy.
+      It is a marvelous morning in spring, flowers and trees are blooming.
       {{ phrases.manga }}
       {{ phrases.standard }}
