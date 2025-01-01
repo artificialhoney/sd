@@ -48,3 +48,12 @@ projects:
       It is a marvelous morning in spring, flowers and trees are blooming.
       {{ phrases.manga }}
       {{ phrases.standard }}
+  the_break:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      The Break – a cute little ginger girl jumping rope on the concrete school yard.
+      She looks very strained, training for the school olympics.
+      Her cute baby french bulldog is jumping around.
+      It is a marvelous morning in spring, flowers and trees are blooming.
+      {{ phrases.manga }}
+      {{ phrases.standard }}
