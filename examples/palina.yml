@@ -211,3 +211,13 @@ projects:
       deep inside an enchanted forest.
       Magic sparks and moonlight enlight the scene. 
       {{ phrases.erotic }}
+  orgy:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful georgous fat red sado-maso alien woman,
+      a sexy vamp, a demon, a maneating creature of lust,
+      bob haircut, red hair, green eyes,
+      wearing a black full latex suit with collar and high-heels,
+      seductively letting go in a magnificent alien temple of lust,
+      the altair is prepared for the great orgy of her tribe.
+      {{ phrases.erotic }}
