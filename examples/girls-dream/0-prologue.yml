@@ -1,7 +1,7 @@
 ---
 face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
-width: 512
-height: 912
+width: 912
+height: 512
 models:
   dreamshaper: Lykon/DreamShaper
   urpm: stablediffusionapi/urpm-v13
@@ -51,6 +51,9 @@ projects:
   the_break:
     model: "{{ models.counterfeit }}"
     prompt:
-      T.
+      The Break – a cute little ginger girl jumping rope on the concrete school yard.
+      She looks very strained, training for the school olympics.
+      Her cute baby french bulldog is jumping around.
+      It is a marvelous morning in spring, flowers and trees are blooming.
       {{ phrases.manga }}
       {{ phrases.standard }}
