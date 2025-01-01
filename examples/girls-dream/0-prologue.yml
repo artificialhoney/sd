@@ -21,10 +21,13 @@ projects:
       It is a marvelous morning in spring, flowers and trees are blooming.
       {{ phrases.manga }}
       {{ phrases.standard }}
-  at_school:
+  to_school:
     model: "{{ models.counterfeit }}"
     prompt:
-      At School – 
+      At School – a cute little ginger girl going to school.
+      She looks happy and smiles, wearing a cool bear pullover hood.
+      Her cute baby french bulldog is walking beside her.
+      It is a marvelous morning in spring, flowers and trees are blooming.
       {{ phrases.manga }}
       {{ phrases.standard }}
   the_training:
