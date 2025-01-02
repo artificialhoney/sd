@@ -6,114 +6,98 @@ phrases:
   common: full body shot of a beautiful gorgeous sexy wicked warrior woman
   style: in the art of a japanese video game, a beat'em'up like mortal kombat
   erotic: sexy, erotic, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
-projects:  
-  Beyonce:
-    Queen of voodoo,
+projects:
+  Beyonce: Queen of voodoo,
     she is kick-boxer,
     a beautiful carribean woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Rihanna:
-    Queen of pirates,
+  Rihanna: Queen of pirates,
     she is a karate fighter,
     a beautiful carribean woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Aaliyah:
-    Queen of the damned,
+  Aaliyah: Queen of the damned,
     she is a kung-fu fighter,
     a beautiful indian woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Suzuka_Nakamoto:
-    Queen of swords,
+  Suzuka_Nakamoto: Queen of swords,
     she is a smurai daughter,
     a beautiful japanese woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Moa_Kikuchi:
-    Queen of knives,
+  Moa_Kikuchi: Queen of knives,
     she is a ninja,
     a beautiful japanese woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Momoko_Okazaki:
-    Queen of shurikens,
+  Momoko_Okazaki: Queen of shurikens,
     she is a ninja,
     a beautiful japanese woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Milla_Jovovich:
-    Queen of the doomed,
+  Milla_Jovovich: Queen of the doomed,
     she is a judo fighter,
     a beautiful serbian woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Charlize_Theron:
-    Queen of rage,
+  Charlize_Theron: Queen of rage,
     she is a boxer,
     a beautiful british woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Sigourney_Weaver:
-    Queen of predators,
+  Sigourney_Weaver: Queen of predators,
     she is a ultimate fighter,
     a beautiful welsh woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Kate_Beckinsale:
-    Queen of vampires,
+  Kate_Beckinsale: Queen of vampires,
     she is a karate fighter,
     a beautiful american woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Adele:
-    Queen of souls,
+  Adele: Queen of souls,
     she is kick boxer,
     a beautiful british woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Alicia_Keys:
-    Queen of pharaoes,
+  Alicia_Keys: Queen of pharaoes,
     she is a kung-fu fighter,
     a beautiful egypt woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Nazan_Eckes:
-    Queen of wolves,
+  Nazan_Eckes: Queen of wolves,
     she is a judo fighter,
     a beautiful turkish woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Jessica_Schwarz:
-    Queen of goth,
+  Jessica_Schwarz: Queen of goth,
     she is a karate fighter,
     a beautiful gothic woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Vivianne_Rojinski:
-    Queen of paris,
+  Vivianne_Rojinski: Queen of paris,
     she is a tae-kwon-do fighter,
     a beautiful french woman,
     {{ phrases.common }},
     {{ phrases.style }},
     {{ phrase.erotic }}
-  Palina_Rojinski:
-    Queen of queens,
+  Palina_Rojinski: Queen of queens,
     she is a tae-kwon-do fighter,
     a beautiful fat russian woman,
     {{ phrases.common }},
