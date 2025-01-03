@@ -15,7 +15,7 @@ projects:
       a beautiful carribean woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Rihanna:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -24,7 +24,7 @@ projects:
       a beautiful carribean woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Aaliyah:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -33,7 +33,7 @@ projects:
       a beautiful indian woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Suzuka_Nakamoto:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -42,7 +42,7 @@ projects:
       a beautiful japanese woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Moa_Kikuchi:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -51,7 +51,7 @@ projects:
       a beautiful japanese woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Momoko_Okazaki:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -60,7 +60,7 @@ projects:
       a beautiful japanese woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Milla_Jovovich:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -69,7 +69,7 @@ projects:
       a beautiful serbian woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Charlize_Theron:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -78,7 +78,7 @@ projects:
       a beautiful british woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Sigourney_Weaver:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -87,7 +87,7 @@ projects:
       a beautiful welsh woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Kate_Beckinsale:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -96,7 +96,7 @@ projects:
       a beautiful american woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Adele:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -105,7 +105,7 @@ projects:
       a beautiful british woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Alicia_Keys:
     prompt:
       Queen of pharaoes,
@@ -113,7 +113,7 @@ projects:
       a beautiful egypt woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Nazan_Eckes:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -122,7 +122,7 @@ projects:
       a beautiful turkish woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Jessica_Schwarz:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -131,7 +131,7 @@ projects:
       a beautiful gothic woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Vivianne_Rojinski:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -140,7 +140,7 @@ projects:
       a beautiful french woman,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
   Palina_Rojinski:
     model: "{{ models.dreamshaper }}"
     prompt:
@@ -150,4 +150,4 @@ projects:
       the endboss,
       {{ phrases.common }},
       {{ phrases.style }},
-      {{ phrase.erotic }}
+      {{ phrases.erotic }}
