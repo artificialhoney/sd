@@ -19,6 +19,7 @@
     scale: 4
     input_target: -1
     output: output
+    direct_output: false
     giger: giger
     cwebp: cwebp
     argv:
@@ -53,7 +54,7 @@
         - swap
         - webp
       ansible.builtin.set_fact:
-        output_path: "{{ [output, (config | basename | splitext | first), project] | path_join }}"
+        output_path: "{{ output if direct_output else ([output, (config | basename | splitext | first), project] | path_join) }}"
         project_dict: "{{ projects[project] }}"
     - name: Txt2img
       tags:
