@@ -9,7 +9,8 @@ phrases:
 projects:
   Beyonce:
     model: "{{ models.dreamshaper }}"
-    prompt: Queen of voodoo,
+    prompt:
+      Queen of voodoo,
       she is kick-boxer,
       a beautiful carribean woman,
       {{ phrases.common }},
@@ -17,7 +18,8 @@ projects:
       {{ phrase.erotic }}
   Rihanna:
     model: "{{ models.dreamshaper }}"
-    prompt: Queen of pirates,
+    prompt:
+      Queen of pirates,
       she is a karate fighter,
       a beautiful carribean woman,
       {{ phrases.common }},
@@ -25,7 +27,8 @@ projects:
       {{ phrase.erotic }}
   Aaliyah:
     model: "{{ models.dreamshaper }}"
-    prompt: Queen of the damned,
+    prompt:
+      Queen of the damned,
       she is a kung-fu fighter,
       a beautiful indian woman,
       {{ phrases.common }},
@@ -33,7 +36,8 @@ projects:
       {{ phrase.erotic }}
   Suzuka_Nakamoto:
     model: "{{ models.dreamshaper }}"
-    prompt: Queen of swords,
+    prompt:
+      Queen of swords,
       she is a smurai daughter,
       a beautiful japanese woman,
       {{ phrases.common }},
@@ -41,7 +45,8 @@ projects:
       {{ phrase.erotic }}
   Moa_Kikuchi:
     model: "{{ models.dreamshaper }}"
-    prompt: Queen of knives,
+    prompt:
+      Queen of knives,
       she is a ninja,
       a beautiful japanese woman,
       {{ phrases.common }},
@@ -66,6 +71,7 @@ projects:
       {{ phrases.style }},
       {{ phrase.erotic }}
   Charlize_Theron:
+    model: "{{ models.dreamshaper }}"
     prompt:
       Queen of rage,
       she is a boxer,
