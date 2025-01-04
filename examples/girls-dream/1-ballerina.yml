@@ -1,0 +1,25 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+width: 912
+height: 512
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+  counterfeit: stablediffusionapi/counterfeit-v30
+phrases:
+  standard: aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  manga: A japanese manga comic scene.
+  comic: A comic scene, in the art of Frank Miller. In the colors blue, white, red.
+projects:  
+  to_training:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      To Training — A cute shy ginger teen girl,
+      wearing a sexy cool training suit and sneakers.
+      She is carrying her training bag to the side.
+      She is a youngstar ballerina and wears a typical ballerina haircut.
+      Now she is walking down a beautiful alley in Paris,
+      looking forward to her first ballet training with the older ones in a modern gymnasium.
+      {{ phrases.comic }}
+      {{ phrases.standard }}
