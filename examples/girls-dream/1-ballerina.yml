@@ -8,7 +8,7 @@ models:
   majicmix: stablediffusionapi/majicmix-v7
   counterfeit: stablediffusionapi/counterfeit-v30
 phrases:
-  standard: aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  standard: sexy, aesthetic, 8K, ultra detailed, cinematic, volumetric lights
   manga: A japanese manga comic scene.
   comic: A comic scene in the art of Frank Miller. Black and white drawing.
   setting: A beautiful day in autumn, the leaves are colorful in Paris. 
