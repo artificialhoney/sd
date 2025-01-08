@@ -49,7 +49,7 @@ projects:
       {{ phrases.standard }}
     width: 912
     height: 512
-  night:
+  samstag:
     model: "{{ models.majicmix }}"
     prompt: |
       {{ phrases.techno }}
