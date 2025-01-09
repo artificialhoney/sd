@@ -1,0 +1,104 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+phrases:
+  mother: Portrait of a beautiful sexy ginger-haired, big-breasted dragon mother, she is sitting on her magnificent ancient throne. Her Dragon is beside her.
+  erotic: sexy, erotic, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+projects:
+  blake:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of William Blake,
+      {{ phrases.erotic }}
+  gaudi:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Antoni Gaudí,
+      {{ phrases.erotic }}
+  rembrandt:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Rembrandt van Rijn,
+      {{ phrases.erotic }}
+  duerer:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Albrecht Dürer,
+      {{ phrases.erotic }}
+  vinci:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Leonardo da Vinci,
+      {{ phrases.erotic }}
+  picasso:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Pablo Picasso,
+      {{ phrases.erotic }}
+  dali:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Salvador Dalí,
+      {{ phrases.erotic }}
+  michelangelo:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Michelangelo,
+      {{ phrases.erotic }}
+  gogh:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Vincent van Gogh,
+      {{ phrases.erotic }}
+  vermeer:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Johannes Vermeer,
+      {{ phrases.erotic }}
+  bosch:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Hieronymus Bosch,
+      {{ phrases.erotic }}
+  monet:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Claude Monet,
+      {{ phrases.erotic }}
+  renoir:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Auguste Renoir,
+      {{ phrases.erotic }}
+  cezanne:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Paul Cézanne,
+      {{ phrases.erotic }}
+  matisse:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Henri Matisse,
+      {{ phrases.erotic }}
+  botticelli:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.mother }},
+      in the art of Sandro Botticelli,
+      {{ phrases.erotic }}
