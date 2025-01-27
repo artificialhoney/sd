@@ -10,7 +10,7 @@ projects:
   jungfer:
     model: "{{ models.dreamshaper }}"
     prompt:
-      She is a beautiful ginger-haired russian mariner girl. A captains dream. Dark colors, red and blue.
-      She is posing on a magnificent pier, latex, high-heels and a collier. Dark make-up.
-      Black and white, beautiful lights, chrome, leather, latex. She is so seductive.
+      She is a beautiful ginger-haired russian maid with flowers in the hair.
+      She is posing on a beautiful meadow, wearing a sexy traditional dress with high-heels.
+      Beautiful lights, summer, sun dawn. She is so seductive.
       {{ phrases.erotic }}
