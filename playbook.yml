@@ -1,0 +1,119 @@
+---
+- name: SD
+  hosts: all
+  vars:
+    model: Lykon/DreamShaper
+    negative_prompt:
+      EasyNegative, BadHands, The artwork avoids the pitfalls of bad art, such as ugly and deformed eyes and faces, poorly drawn, blurry, and disfigured
+      bodies with extra limbs and close-ups that look weird. It also avoids other common issues such as watermarking, text errors, missing fingers or digits,
+      cropping, poor quality, and JPEG artifacts. The artwork is free of signature or watermark and avoids framing issues. The hands are not deformed,
+      the eyes are not disfigured, and there are no extra bodies or limbs. The artwork is not blurry, out of focus, or poorly drawn,
+      and the proportions are not bad or deformed. There are no mutations, missing limbs, or floating or disconnected limbs.
+      The hands and neck are not malformed, and there are no extra heads or out-of-frame elements. The artwork is not low-res or disgusting and is a well-drawn,
+      highly detailed, and beautiful rendering.
+    width: 512
+    height: 912
+    batch_size: 10
+    batch_count: 10
+    inference_steps: 70
+    scale: 4
+    input_target: -1
+    output: output
+    direct_output: false
+    giger: giger
+    cwebp: cwebp
+    project: ""
+    argv:
+      - --lora_model
+      - OedoSoldier/detail-tweaker-lora
+      - --lora_filename
+      - add_detail.safetensors
+      - --lora_scale
+      - 1.0
+      - --inversion_model
+      - embed/EasyNegative
+      - artificialhoney/bad-hands-5
+      - --inversion_filename
+      - EasyNegative.safetensors
+      - bad-hands-5.safetensors
+      - --inversion_token
+      - EasyNegative
+      - BadHands
+      - --bypass_safety
+  tasks:
+    - name: Config
+      tags:
+        - txt2img
+        - upscale
+        - swap
+        - webp
+      ansible.builtin.include_vars: "{{ config }}"
+    - name: Setup
+      tags:
+        - txt2img
+        - upscale
+        - swap
+        - webp
+      ansible.builtin.set_fact:
+        output_path: "{{ output if direct_output else ([output, (config | basename | splitext | first), project] | path_join) }}"
+        project_dict: "{{ projects[project] if project else {} }}"
+    - name: Txt2img
+      tags:
+        - txt2img
+      with_sequence: start=1 end="{{ project_dict.batch_count | default(batch_count) }}"
+      ansible.builtin.command:
+        argv: "{{ giger_argv + (project_dict.argv | default(argv)) | flatten }}"
+      vars:
+        giger_argv:
+          - "{{ giger }}"
+          - image
+          - "{{ project_dict.prompt }}"
+          - --output={{ output_path }}
+          - --negative_prompt={{ project_dict.negative_prompt | default(negative_prompt) }}
+          - --model={{ project_dict.model | default(model) }}
+          - --width={{ (project_dict.width | default(width)) | int }}
+          - --height={{ (project_dict.height | default(height)) | int }}
+          - --batch_size={{ (project_dict.batch_size | default(batch_size)) | int }}
+          - --inference_steps={{ (project_dict.inference_steps | default(inference_steps)) | int }}
+          - --name={{ project }}
+      register: _output
+      changed_when: _output.rc != 0
+    - name: Swap
+      tags:
+        - swap
+      with_fileglob: "{{ [output_path, '*.png'] | path_join }}"
+      ansible.builtin.command:
+        argv:
+          - "{{ giger }}"
+          - swap
+          - -f={{ project_dict.face | default(face) }}
+          - -i={{ item }}
+          - -o={{ item | splitext | first }}.{{ (project_dict.face | default(face)) | basename | splitext | first }}.png
+          - -t={{ (project_dict.input_target | default(input_target)) | int }}
+          - -e
+      register: _output
+      changed_when: _output.rc != 0
+    - name: Upscale
+      tags:
+        - upscale
+      with_fileglob: "{{ [output_path, '*.png'] | path_join }}"
+      ansible.builtin.command:
+        argv:
+          - "{{ giger }}"
+          - upscale
+          - -i={{ item }}
+          - -o={{ item | splitext | first }}.upscaled.png
+          - -s={{ (project_dict.scale | default(scale)) | int }}
+      register: _output
+      changed_when: _output.rc != 0
+    - name: Webp
+      tags:
+        - webp
+      with_fileglob: "{{ [output_path, '*.png'] | path_join }}"
+      ansible.builtin.command:
+        argv:
+          - "{{ cwebp }}"
+          - "{{ item }}"
+          - -o={{ item | splitext | first }}.webp
+      register: _output
+      changed_when: _output.rc != 0

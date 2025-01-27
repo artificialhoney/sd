@@ -1,0 +1,16 @@
+---
+face: "{{ [playbook_dir, 'examples', 'pornsuper.io', 'vivienne.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+phrases:
+  erotic: big breasts, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+projects:
+  paradiesvogel:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      She is a beautiful platin-blond baltic ballerina. A paradise bird and a queen. Dark colors, purple and black.
+      She is posing in a magnificent sado-maso sex studio, black latex, high-heels and a collier. Dark make-up.
+      Black and white, beautiful lights, chrome, leather, latex. She is so seductive.
+      {{ phrases.erotic }}

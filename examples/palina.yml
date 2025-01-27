@@ -1,0 +1,223 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+phrases:
+  erotic: big breasts, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+projects:
+  mermaid:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      The Beginning — mystical ethereal ginger siren mermaid swimming deep in the oceans abyss,
+      surrounded by elements of gold silver and iridescent colors,
+      captivating masterpiece whimsical depth.
+      {{ phrases.erotic }}
+  devil:
+    model: "{{ models.urpm }}"
+    prompt:
+      a portrait of a beautiful georgous fat russian ginger sado-maso devil,
+      wearing a red full latex suit with collar and high-heels,
+      seductively letting go in a magnificent temple of lust,
+      {{ phrases.erotic }}
+  butterfly:
+    model: "{{ models.urpm }}"
+    prompt:
+      A beautiful georgous ginger girl in a fairy costume,
+      wearing sexy stockings with high-heels and collar,
+      surrounded by pink peonies,
+      {{ phrases.erotic }}
+  lolita:
+    model: "{{ models.urpm }}"
+    prompt:
+      An erotic ginger girl is wearing a short erotic dress made of transparent, colorful plastic.
+      The dress is modern and eye-catching, the bright colors shine through the translucent material.
+      The woman's behavior suggests fun and boldness, she embraces the unconventional nature of her clothing.
+      Very detailed, beautiful body and face, intricate plastic shelves, plastic over-the-knee socks,
+      lolita-style outfit, cut out, harness,
+      {{ phrases.erotic }}
+  upskirt:
+    model: "{{ models.urpm }}"
+    prompt:
+      An erotic ginger girl, she wears a very seductive, maid lolita lingerie style outfit in different coloured latex.
+      She is a maid in a very luxurious mansion.
+      Transparent Dessous parts, pink black, purple black, she is cleaning the room, cut-out chain harness, upskirt,
+      {{ phrases.erotic }}
+  candy:
+    model: "{{ models.urpm }}"
+    prompt:
+      A candy colored sweet ginger woman, very erotic,
+      in an elaborate different colored glitter, sparkle,
+      glittery candy colored lolita latex outfit, very revealing,
+      elaborate details in the outfit, very sexy, little sugar doll,
+      sugar babe, upskirt,
+      {{ phrases.erotic }}
+  heroine:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Grunge style, stylish ginger female, a formidable heroine,
+      gothic fantasy, warrior bikini, dark allure,
+      formidable armor, ornate engravings, demonic motifs, spiked gauntlets, leather corset, skull ornaments, mystical symbols,
+      ethereal glow, fierce countenance, haunting beauty, moonlit battlefield,
+      eerie lighting, sinister hues, intricate patterns,
+      textured, distressed, vintage, edgy, punk rock vibe, dirty, noisy,
+      {{ phrases.erotic }}
+  elf:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      fairy tale beautiful ginger woman, long hair, green eyes, full lips,
+      fair complexion, full body, wearing white and blue robes,
+      standing in a frozen wasteland, snow covered mountains, blizzard, wind, ice, sleet,
+      magical, fantastical, enchanting,
+      {{ phrases.erotic }}
+  goddess:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Ancient greek ginger goddess, jewelry accessoires,
+      full-body, erotic make-up, lipgloss,
+      in an ancient luxurious temple, dynamic lights, shiny, glitter,
+      overknee perlmutt transparent socks,
+      {{ phrases.erotic }}
+  queen:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      A very beautiful ginger queen sitting on a black throne made of gold,
+      with a serpent-dragon like elements and design,
+      intricate details, dramatic lighting, hyperrealism,
+      {{ phrases.erotic }}
+  valkyrie:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      A very beautiful ginger valkyrie, flowing hair, stands stoic and powerful on a viking battlefield.
+      This image showcases the valkyrie's intricate armor and ethereal aura with stunning detail and precision.
+      The intricate patterns etched into her breastplate shimmer with an otherworldly glow,
+      while her majestic wings radiate a sense of fierce elegance.
+      This masterfully crafted artwork captures the essence of a supernatural warrior in a mesmerizing and captivating way.
+      {{ phrases.erotic }}
+  combat:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Beautiful hyperrealistic photograph of cute young ginger woman with runic tattoos,
+      dirty face blood splattered, wearing full heavy mecha armor, combat harness, neon highlights, undercut hairstyle, combat pose,
+      exterior of destroyed building, fires, smoke, debris, camo netting, ammo boxes, rain, stormy, wet,
+      abstract beauty, near perfection, pure form, intricate detail,
+      {{ phrases.erotic }}
+  vampire:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      A stunning ginger female vampire stands in a dimly lit gothic setting.
+      Flowing long red hair, contrasting sharply with her pale skin.
+      Her eyes glow with an eerie, captivating light, adding to her otherworldly allure.
+      She wears an elegant, dark dress that accentuates her slender figure.
+      Her fangs are prominently visible as she smiles, exuding a mix of menace and seduction.
+      The background features gothic architecture, enhancing the dark and mysterious atmosphere.
+      {{ phrases.erotic }}
+  viking:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful viking woman,
+      formidable armor, ornate engravings, runes,
+      her upper body is tattooed,
+      she has long ginger braided hair and green eyes,
+      nordic surroundings, nordic sea, sunbeam shadow play,
+      {{ phrases.erotic }}
+  cowgirl:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful cowgirl woman,
+      blue jeans, sexy cowboy boots with spurs,
+      formidable belt buckle, sexy flannel top, horse harness,
+      her arms and body are tattooed,
+      she has long ginger braided hair and green eyes,
+      on a farm, desert surroundings, cactus, sunbeam shadow play,
+      {{ phrases.erotic }}
+  huntress:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful alien huntress woman,
+      formidable carbon metallic combat suit, laser gun,
+      she has long ginger braided hair and green eyes,
+      on a alien planet, jungle surroundings, exotic flowers, sunbeam shadow play,
+      {{ phrases.erotic }}
+  ninja:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful ninja woman,
+      magnificent traditional black ninja combat suit,
+      a magnificent red belt,
+      she has ginger braided hair and green eyes,
+      in an ancient japanese village, a dark rainy night, full moon shadow play,
+      {{ phrases.erotic }}
+  indian:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful indian rogue,
+      a magnificent native-american leather armor,
+      heavy leather boots and cape,
+      she has ginger braided hair and green eyes,
+      in a beautiful north-american forest, surrounded by mountains, a shiny summer day,
+      {{ phrases.erotic }}
+  finish:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful finish viking rogue woman,
+      a magnificent leather armor, nordic metal runes and ornaments,
+      heavy leather boots and cape, dirty,
+      she has a very short ginger mohawk haircut and green eyes,
+      during the finish winter, a shiny day, ice reflecting the sun.
+      {{ phrases.erotic }}
+  geisha:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot,
+      a wonderful devoted beautiful Geisha,
+      magnificent decorated silky ginger hair,
+      pure white skin, artful black,
+      white and red japanese dragon Tattoos,
+      wearing a super sexy mini-kimono,
+      wooden japanese platform-sandals.
+      Playing in a luxurious swimming pool,
+      at sun dawn in a beautiful Tokyo rich suburbian springtime apartment,
+      funky purple-pink-orange lights, cool and mature atmosphere, drinks.
+      {{ phrases.erotic }}
+  cheeky:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful sexy cute cheeky cool dutch raver girl,
+      ginger hair with braids,
+      super sexy orange latex dress,
+      sexy black platform-boots, nose-piercing, freckels,
+      dancing to dutch techno music,
+      a fresh summer breeze on a beautiful summer day in the netherlands.
+      {{ phrases.erotic }}
+  mature:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful seductive fat russian ginger mature domina,
+      black horn-rimmed glasses, a black latex necklace,
+      a latex body with free breasts and vagina,
+      sexy black high-heels, latex stockings, breast piercings,
+      with a huge purple dildo,
+      letting her go on a massage chair in a SM studio.
+      {{ phrases.erotic }}
+  witch:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful sexy black magic demon,
+      a witch, long ginger hair, demonical make-up, glowing green eyes,
+      wearing a simple dark green hooded cape.
+      She summons the ghosts of the elder, on a lost fireplace,
+      deep inside an enchanted forest.
+      Magic sparks and moonlight enlight the scene. 
+      {{ phrases.erotic }}
+  orgy:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      full body shot, a beautiful georgous fat red sado-maso alien woman,
+      a sexy vamp, a demon, a maneating creature of lust,
+      bob haircut, red hair, green eyes,
+      wearing a black full latex suit with collar and high-heels,
+      seductively letting go in a magnificent alien temple of lust,
+      the altair is prepared for the great orgy of her tribe.
+      {{ phrases.erotic }}

@@ -1,0 +1,29 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+width: 512
+height: 912
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+  counterfeit: stablediffusionapi/counterfeit-v30
+phrases:
+  standard: aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  french: sexy, aesthetic, french, melancholy
+  manga: A japanese manga comic scene.
+  concept: Concept art drawing in the style of Frank Miller.
+  poster: Poster art, full body shot, in the art of Kill Bill by Quentin Tarrantino.
+  paris: A beautiful day in autumn, the leaves are colorful in Paris.
+  bunker: In the background a rotten schoolyard of concrete, graffiti and dirt everywhere, a dark night, it is raining.
+projects:  
+  punk:
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.poster }},
+      A beautiful finish black-haired punk girl,
+      very angry about her boyfriend,
+      looking a little bit fucked-up in her super-sexy black punk outfit,
+      beautiful dark make-up, heavy boots and long nails,
+      she is a goth.
+      {{ phrases.bunker }}
+      {{ phrases.standard }}

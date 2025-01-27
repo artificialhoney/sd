@@ -1,0 +1,59 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+width: 912
+height: 512
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+  counterfeit: stablediffusionapi/counterfeit-v30
+phrases:
+  standard: aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  manga: A japanese manga comic scene.
+projects:  
+  wake_up:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      Wake Up – a cute litle ginger girl lying sleeping in her childrooms's bed.
+      She looks lovely, wearing a cute pyjama.
+      The childroom is decorated colorfully with toys and posters.
+      Her cute baby french bulldog is sleeping on the carpet in front of the bed.
+      It is a marvelous morning in spring, flowers and trees are blooming.
+      {{ phrases.manga }}
+      {{ phrases.standard }}
+  to_school:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      To School – a cute little ginger girl going to school.
+      She looks happy and smiles, wearing a cool bear pullover hood.
+      Her cute baby french bulldog is walking beside her.
+      It is a marvelous morning in spring, flowers and trees are blooming.
+      {{ phrases.manga }}
+      {{ phrases.standard }}
+  at_school:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      At School – a cute little ginger girl in a school class.
+      She looks curious and is reading in a book, sitting on her desk.
+      Her cute baby french bulldog is sitting beside her.
+      It is a marvelous morning in spring, flowers and trees are blooming.
+      {{ phrases.manga }}
+      {{ phrases.standard }}
+  the_lunch:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      The Lunch – a cute little ginger girl sitting on a park bank.
+      She looks very happy, eating a yummy sandwich.
+      Her cute baby french bulldog is sitting beside her, also eating yummy.
+      It is a marvelous morning in spring, flowers and trees are blooming.
+      {{ phrases.manga }}
+      {{ phrases.standard }}
+  the_break:
+    model: "{{ models.counterfeit }}"
+    prompt:
+      The Break – a cute little ginger girl jumping rope on the concrete school yard.
+      She looks very strained, training for the school olympics.
+      Her cute baby french bulldog is jumping around.
+      It is a marvelous morning in spring, flowers and trees are blooming.
+      {{ phrases.manga }}
+      {{ phrases.standard }}

@@ -1,0 +1,153 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+phrases:
+  common: full body shot of a beautiful gorgeous sexy wicked warrior woman
+  style: in the art of a japanese video game, a beat'em'up like mortal kombat
+  erotic: sexy, erotic, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+projects:
+  Beyonce:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of voodoo,
+      she is kick-boxer,
+      a beautiful carribean woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Rihanna:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of pirates,
+      she is a karate fighter,
+      a beautiful carribean woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Aaliyah:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of the damned,
+      she is a kung-fu fighter,
+      a beautiful indian woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Suzuka_Nakamoto:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of swords,
+      she is a smurai daughter,
+      a beautiful japanese woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Moa_Kikuchi:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of knives,
+      she is a ninja,
+      a beautiful japanese woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Momoko_Okazaki:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of shurikens,
+      she is a ninja,
+      a beautiful japanese woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Milla_Jovovich:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of the doomed,
+      she is a judo fighter,
+      a beautiful serbian woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Charlize_Theron:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of rage,
+      she is a boxer,
+      a beautiful british woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Sigourney_Weaver:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of predators,
+      she is a ultimate fighter,
+      a beautiful welsh woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Kate_Beckinsale:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of vampires,
+      she is a karate fighter,
+      a beautiful american woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Adele:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of souls,
+      she is kick boxer,
+      a beautiful british woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Alicia_Keys:
+    prompt:
+      Queen of pharaoes,
+      she is a kung-fu fighter,
+      a beautiful egypt woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Nazan_Eckes:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of wolves,
+      she is a judo fighter,
+      a beautiful turkish woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Jessica_Schwarz:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of goth,
+      she is a karate fighter,
+      a beautiful gothic woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Vivianne_Rojinski:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of paris,
+      she is a tae-kwon-do fighter,
+      a beautiful french woman,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}
+  Palina_Rojinski:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      Queen of queens,
+      she is a tae-kwon-do fighter,
+      a beautiful fat russian woman,
+      the endboss,
+      {{ phrases.common }},
+      {{ phrases.style }},
+      {{ phrases.erotic }}

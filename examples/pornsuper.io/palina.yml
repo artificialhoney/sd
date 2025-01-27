@@ -1,0 +1,16 @@
+---
+face: "{{ [playbook_dir, 'examples', 'pornsuper.io', 'palina.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+phrases:
+  erotic: big breasts, erotic, sexy, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+projects:
+  jungfer:
+    model: "{{ models.dreamshaper }}"
+    prompt:
+      She is a beautiful ginger-haired russian mariner girl. A captains dream. Dark colors, red and blue.
+      She is posing on a magnificent pier, latex, high-heels and a collier. Dark make-up.
+      Black and white, beautiful lights, chrome, leather, latex. She is so seductive.
+      {{ phrases.erotic }}

@@ -1,0 +1,60 @@
+---
+face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+width: 912
+height: 512
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+  counterfeit: stablediffusionapi/counterfeit-v30
+phrases:
+  standard: sexy, aesthetic, french, melancholy
+  manga: A japanese manga comic scene.
+  comic: Concept art drawing in the style of Frank Miller.
+  setting: A beautiful day in autumn, the leaves are colorful in Paris. 
+projects:  
+  to_training:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.comic }},
+      A cute shy ginger teen girl,
+      wearing a sexy cool tracksuit and sneakers.
+      She is a youngstar ballerina with a bun haircut.
+      {{ phrases.setting }}
+      {{ phrases.standard }}
+  the_training:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.comic }},
+      A young shy but highly talented ballerina starts her ballet training in the modern gym in Paris.
+      The beautiful red-haired girl looks stunning in her tight and sexy costume.
+      She dances like a young goddess.
+      {{ phrases.setting }}
+      {{ phrases.standard }}
+  the_trainer:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.comic }},
+      A beautiful, older, sexy big-breasted russian red-haired lady with dark horn-rimmed glasses is a ballet coach from Paris.
+      She is wearing a tailored sexy tracksuit and a ponytail.
+      Now she is warming up for the next training unit.
+      {{ phrases.setting }}
+      {{ phrases.standard }}
+  in_the_opera:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.comic }},
+      A beautiful young red-haired ballerina makes her grand entrance in a classical and magnificent ballet theater in Paris.
+      Her costume is breathtaking and opulent.
+      She dances like a young goddess and people love her.
+      {{ phrases.setting }}
+      {{ phrases.standard }}
+  the_party:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.comic }},
+      A beautiful red-haired party girl has finally finished work and is wearing a super-sexy dress, make-up, high heels and a cool and sexy haircut.
+      She is dancing like she is in ecstasy in a Parisian techno disco.
+      You can see how she is enjoying the music and moving in a sexily dreamy way.
+      {{ phrases.setting }}
+      {{ phrases.standard }}
