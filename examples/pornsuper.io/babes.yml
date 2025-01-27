@@ -1,0 +1,108 @@
+---
+faces: 
+  palina: "{{ [playbook_dir, 'examples', 'pornsuper.io', 'palina.png'] | path_join }}"
+  vivienne: "{{ [playbook_dir, 'examples', 'pornsuper.io', 'vivienne.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+  urpm: stablediffusionapi/urpm-v13
+  majicmix: stablediffusionapi/majicmix-v7
+phrases:
+  base: aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+  erotic: big breasts, erotic, sexy
+  characters:
+    palina: She is a beautiful ginger-haired finish girl.
+    vivienne: She is a beautiful platin-blond baltic girl.
+    galina: She is a beautiful platin-blond baltic mature woman.
+  styles:
+    japanese: magnificent sexy japanese style latex stockings, body and high-heels
+    persian: magnificent sexy persian style latex stockings, body and high-heels
+    gothic: magnificent sexy gothic style latex stockings, body and high-heels
+    devilish: magnificent sexy devilish style latex stockings, body and high-heels
+  settings:
+    bedroom: beautiful master bedroom
+    bath: beautiful master bathroom
+    studio: beautiful sado-maso studio
+    garden: beautiful winter garden
+    library: beautiful library
+  colors:
+    white: beautiful light colors, white and silver
+    pink: beautiful light colors, pink and black
+    black: beautiful dark colors, black and silver
+    purple: beautiful dark colors, purple and black
+    red: beautiful dark colors, red and gold
+    mono: beautiful dark colors, black and white
+  roles:
+    hexe: seer
+    zofe: roommaid
+    teufelin: domina
+    jungfer: bridesmaid
+    paradiesvogel: bird-dressed dancer
+    nonne: nun
+
+projects:
+  zofe-0:
+    face: "{{ faces.palina }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.palina }},
+      {{ phrases.roles.zofe }},
+      {{ phrases.styles.japanese }},
+      {{ phrases.colors.purple }},
+      {{ phrases.settings.bedroom }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
+  jungfer:
+    face: "{{ faces.palina }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.palina }},
+      {{ phrases.roles.jungfer }},
+      {{ phrases.styles.persian }},
+      {{ phrases.colors.white }},
+      {{ phrases.settings.bathroom }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
+  hexe:
+    face: "{{ faces.palina }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.palina }},
+      {{ phrases.roles.hexe }},
+      {{ phrases.styles.gothic }},
+      {{ phrases.colors.black }},
+      {{ phrases.settings.library }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
+  teufelin:
+    face: "{{ faces.vivienne }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.galina }},
+      {{ phrases.roles.teufelin }},
+      {{ phrases.styles.devilish }},
+      {{ phrases.colors.red }},
+      {{ phrases.settings.studio }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
+  paradiesvogel-0:
+    face: "{{ faces.vivienne }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.vivienne }},
+      {{ phrases.roles.paradiesvogel }},
+      {{ phrases.styles.persian }},
+      {{ phrases.colors.pink }},
+      {{ phrases.settings.garden }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
+  nonne:
+    face: "{{ faces.vivienne }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.galina }},
+      {{ phrases.roles.nonne }},
+      {{ phrases.styles.gothic }},
+      {{ phrases.colors.mono }},
+      {{ phrases.settings.studio }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
