@@ -13,6 +13,7 @@ phrases:
     palina: She is a beautiful ginger-haired finish girl.
     vivienne: She is a beautiful platin-blond baltic girl.
     galina: She is a beautiful platin-blond baltic mature woman.
+    mature: She is a beautiful fat old platin-blond baltic mature woman with horn-rimmed glasses.
   styles:
     japanese: magnificent sexy japanese style latex stockings, body and high-heels
     persian: magnificent sexy persian style latex stockings, body and high-heels
@@ -38,6 +39,8 @@ phrases:
     jungfer: bridesmaid
     paradiesvogel: bird-dressed dancer
     nonne: nun
+    maus: school girl
+    konkubine: concubine
 
 projects:
   zofe-0:
@@ -102,6 +105,28 @@ projects:
       {{ phrases.characters.galina }},
       {{ phrases.roles.nonne }},
       {{ phrases.styles.gothic }},
+      {{ phrases.colors.mono }},
+      {{ phrases.settings.studio }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
+  maus-0:
+    face: "{{ faces.vivienne }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.mature }},
+      {{ phrases.roles.maus }},
+      {{ phrases.styles.japanese }},
+      {{ phrases.colors.purple }},
+      {{ phrases.settings.studio }},
+      {{ phrases.erotic }},
+      {{ phrases.base }}
+  konkubine:
+    face: "{{ faces.palina }}"
+    model: "{{ models.majicmix }}"
+    prompt: |
+      {{ phrases.characters.mature }},
+      {{ phrases.roles.konkubine }},
+      {{ phrases.styles.japanese }},
       {{ phrases.colors.mono }},
       {{ phrases.settings.studio }},
       {{ phrases.erotic }},
