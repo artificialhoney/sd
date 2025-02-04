@@ -1,7 +1,7 @@
 ---
 faces: 
-  palina: "{{ [playbook_dir, 'examples', 'pornsuper.io', 'palina.png'] | path_join }}"
-  vivienne: "{{ [playbook_dir, 'examples', 'pornsuper.io', 'vivienne.png'] | path_join }}"
+  palina: "{{ [playbook_dir, 'examples', '_assets', 'faces', 'palina.png'] | path_join }}"
+  vivienne: "{{ [playbook_dir, 'examples', '_assets', 'faces', 'vivienne.png'] | path_join }}"
 models:
   dreamshaper: Lykon/DreamShaper
   urpm: stablediffusionapi/urpm-v13

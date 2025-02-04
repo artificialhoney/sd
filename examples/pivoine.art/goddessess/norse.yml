@@ -1,0 +1,80 @@
+---
+face: "{{ [playbook_dir, 'examples', '_assets', 'faces', 'palina.png'] | path_join }}"
+models:
+  dreamshaper: Lykon/DreamShaper
+phrases:
+  goddessess:
+    freyja: |
+      Freyja - Norse goddess of love, battle and death.
+      Freyja is the most celebrated of the Norse goddesses.
+      Her father was Njǫrd the god of the sea and her twin brother is the god Freyr - 
+      god of rain, sun and peace.
+    idun: |
+      Idun - Norse goddess of spring, new life and youth.
+      In the Old Norse language, the name Iðunn means ‘the rejuvenating one’.
+      This name relates to her powers: she carries a basket of fruits that grant immortality.
+      The Norse gods must eat them to renew their youth and remain immortal.
+    frigg: |
+      Frigg - Norse goddess of foresight and motherhood
+      Frigg is the wife of Odin, the leader of all the Norse gods.
+      Frigg’s magic meant that she could determine the course of fate and make events happen -
+      she is often depicted with a spinning wheel and spindle, symbolic of weaving time.
+    skadi: |
+      Skadi - Norse goddess of winter and hunting.
+      Skadi is a giantess who hunts in the mountains on skis.
+      She uses a bow to hunt in the high mountains where it’s permanently covered by ice and snow.
+    sif: |
+      Sif - Norse goddess of the earth, homes and crops.
+      Sif is the wife of Thor.
+      Her golden hair represents the wheat fields which she helps to grow.
+      She plays a key part in the Norse myth, The Creation of Thor’s Hammer.
+    hel: |
+      Hel - Norse goddess of the underworld.
+      Hel is the daughter of Loki and her name means ‘hidden’ in Old Norse.
+      She watches over the dead who arrive and dwell in the underworld, a place called Niflheim.
+      Hel is described in Old Norse myths as being half made from flesh and half blue and always looking fierce and downcast.
+  base: Portrait of a beautiful sexy ginger-haired, big-breasted woman.
+  erotic: sexy, erotic, aesthetic, 8K, ultra photoreal, ultra detailed, cinematic, volumetric lights
+projects:
+  freyja:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.base }},
+      {{ phrases.goddessess.freyja }}
+      in the art of Leonardo da Vinci,
+      {{ phrases.erotic }}
+  idun:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.base }},
+      {{ phrases.goddessess.idun }}
+      in the art of Leonardo da Vinci,
+      {{ phrases.erotic }}
+  frigg:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.base }},
+      {{ phrases.goddessess.frigg }}
+      in the art of Leonardo da Vinci,
+      {{ phrases.erotic }}
+  skadi:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.base }},
+      {{ phrases.goddessess.skadi }}
+      in the art of Leonardo da Vinci,
+      {{ phrases.erotic }}
+  sif:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.base }},
+      {{ phrases.goddessess.sif }}
+      in the art of Leonardo da Vinci,
+      {{ phrases.erotic }}
+  hel:
+    model: "{{ models.dreamshaper }}"
+    prompt: |
+      {{ phrases.base }},
+      {{ phrases.goddessess.hel }}
+      in the art of Leonardo da Vinci,
+      {{ phrases.erotic }}

@@ -1,5 +1,5 @@
 ---
-face: "{{ [playbook_dir, 'examples', 'palina.png'] | path_join }}"
+face: "{{ [playbook_dir, 'examples', '_assets', 'faces', 'palina.png'] | path_join }}"
 models:
   dreamshaper: Lykon/DreamShaper
 phrases:
